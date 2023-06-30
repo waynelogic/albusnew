@@ -1,0 +1,37 @@
+<header class="fixed z-[999] w-full isolate">
+    <div class="absolute inset-0 bg-white/50 z-[-1] backdrop-blur-[20px] backdrop-saturate-[180%]"></div>
+    <div class="infoline bg-ink-900 text-gray-700 ">
+        <div class="container mx-auto flex items-center justify-between py-3">
+            <ul class="flex flex-wrap items-center">
+                <li class="mr-5">
+                    <a href="#" class="flex items-center hover:text-primary transition-all">
+                        {% partial 'icon' s=4 icon='microphone' %}
+                        <div class="ml-4">
+                            <span class="text-sm">Телефон для связи</span>
+                            <h6>+7 (989) 5-1234-44</h6>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <a href="#" class="flex items-center hover:text-primary transition-all">
+                        {% partial 'icon' s=4 icon='envelope-open' %}
+                        <div class="ml-4">
+                            <span class="text-sm">Электронная почта</span>
+                            <h6>info@albus-it.ru</h6>
+                        </div>
+                    </a>
+                </li>
+            </ul>
+            <ul class="hidden md:flex space-x-4">
+                {% for item in obInfolineLinks %}
+                <li>
+                    <a href="/{{ item.url }}" class="flex flex-col items-center hover:text-primary transition-all {{ item.url in this.page.url ? 'text-primary' }} ">
+                        {% partial 'icon' s=4 icon=item.icon %}
+                        {{ item.name }}
+                    </a>
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    </div>
+</header>

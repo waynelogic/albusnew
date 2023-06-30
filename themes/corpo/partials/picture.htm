@@ -1,0 +1,42 @@
+{% set quality = data.quality is defined ? data.quality : 100 %}
+{% set mode = data.mode is defined ? data.mode : 'crop' %}
+{% set lazy = data.lazy is defined ? data.lazy : true %}
+{% set alt = data.alt is defined ? data.alt : '' %}
+{% set css = data.css is defined ? data.css : '' %}
+
+{% set mimeTypes = {
+	'webp' : 'image/webp',
+	'jpeg' : 'image/jpeg',
+	'jpg' : 'image/jpeg',
+} %}
+
+{% set defWidth = data.sizes[0].width %}
+{% set defHeight = data.sizes[0].height %}
+
+{% set defOptions = {
+    quality : quality,
+    extension : 'jpg',
+    mode : mode,
+} %}
+
+<picture class="{{ picturecss }}">
+	{% for format in data.formats %}
+		{% for size in data.sizes %}
+			{% set options = { 'quality' : quality, 'extension' : format, mode : mode } %}
+			<source
+				{{ size.media is defined ? ('media="' ~ size.media ~ '"') | raw }}
+				srcset="{{ data.img | resize( size.width * 2, size.height * 2, options ) }} 2x,
+						{{ data.img | resize( size.width, size.height, options ) }} 1x"
+				type="{{ mimeTypes[format] }}"
+			>
+		{% endfor %}
+	{% endfor %}
+	<img
+		class="{{ css }}"
+		{{ lazy ? ('loading="lazy"') | raw }}
+		src="{{ data.img | resize( defWidth, defHeight, defOptions ) }}"
+		alt="{{ alt }}"
+		width="{{ defWidth }}"
+		height="{{ defHeight }}"
+	>
+</picture>

@@ -1,0 +1,35 @@
+@import url('swiper/swiper.min.css');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+    .container {
+        @apply mx-auto;
+    }
+}
+
+@layer components {
+    .swiper {
+        @apply relative;
+    }
+    .swiper-button-prev, .swiper-button-next {
+        @apply absolute bg-white/20 text-white rounded-full p-3 -translate-y-1/2 top-1/2 z-10 cursor-pointer transition-all hover:bg-primary;
+    }
+    .swiper-button-prev {
+        @apply left-6 rotate-180;
+    }
+    .swiper-button-next {
+        @apply right-6;
+    }
+    .btn {
+        @apply inline-flex items-center justify-center text-lg font-semibold rounded-xl shadow-md px-11 py-4 transition-all duration-300;
+    }
+    .btn-default {
+        @apply text-[#0F0F0F] bg-primary hover:bg-primary-600;
+    }
+    .btn-white {
+        @apply text-[#0F0F0F] bg-white hover:bg-primary-600;
+    }
+}

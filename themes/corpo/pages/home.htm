@@ -1,0 +1,179 @@
+url = "/"
+layout = "default"
+title = "Главная"
+==
+<section class="">
+    <div class="swiper" data-lazy="slider">
+        <div class="swiper-wrapper">
+            <div class="swiper-slide relative isolate overflow-hidden py-32">
+                <img class="absolute w-full h-full top-0 object-cover z-[-2]" src="https://msme.icai.org/wp-content/uploads/2021/06/unnamed.jpg" alt="">
+                <div class="absolute inset-0 bg-black/30 z-[-1]"></div>
+                <div class="container text-white">
+                    <div class="w-3/4">
+                        <h3 class="text-primary text-xl font-bold uppercase mb-4 drop-shadow-md">Компания</h3>
+                        <h2 class="text-7xl font-bold mb-4 drop-shadow-md">Премиальное сопровождение бизнеса по всей России</h2>
+                        <p class="text-lg drop-shadow-md">Доведите свой бизнес до идеала с помощью премиального сопровождения Albus. Наши эксперты помогут вам оптимизировать ваш бизнес и принести отличные результаты.</p>
+                        <p class="mt-4 space-x-4">
+                            <a href="https://muffle.droitlab.com/contact/" class="btn btn-default">Контакты</a>
+                            <a href="https://muffle.droitlab.com/about-us/" class="btn btn-white">Услуги</a>
+                        </p>
+                    </div>
+                </div>
+            </div>
+            <div class="swiper-slide">Slide 2</div>
+            <div class="swiper-slide">Slide 3</div>
+        </div>
+        <div class="swiper-button-prev">
+            {% partial 'icon' icon='arrow-right-bold' s=4 %}
+        </div>
+        <div class="swiper-button-next">
+            {% partial 'icon' icon='arrow-right-bold' s=4 %}
+        </div>
+    </div>
+</section>
+
+
+{% set arSerices = [
+    {
+        title: 'Автоматизация бизнеса',
+        icon: 'handshake',
+        text: 'Внедрение и сопровождение программ 1С Предприятие.'
+    },
+    {
+        title: 'Бухгалтерская и налоговая отчетность',
+        icon: 'calculator',
+        text: 'Ведение бухгалтерии организаций любого типа.'
+    },
+    {
+        title: 'Создание сайта',
+        icon: 'cloud',
+        text: 'Ведение бухгалтерии организаций любого типа.'
+    },
+    {
+        title: 'Программные продукты',
+        icon: 'graduation-cap',
+        text: 'Продажа и настройка оборудования, а так же ремонт вашего.'
+    },
+    {
+        title: 'Торговое оборудование',
+        icon: 'cpu-light',
+        text: 'Установка и настройка тех. средств для работы.'
+    },
+    {
+        title: 'Дизайн',
+        icon: 'projector-screen',
+        text: 'Разработка собственного стиля от оформления сайта до дизайна помещения.'
+    },
+] %}
+<section class="services bg-[#1B1B1B]">
+    <div class="container py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+            {% for obService in arSerices %}
+            <a href="#" class="group rounded-3xl flex items-center py-8 text-white bg-[#292c30] transition-all hover:bg-[#232529]">
+                <div class="px-5 py-3 mr-6 rounded-r-2xl text-gray-300 bg-[#36393c] transition-all group-hover:text-[#292c30] group-hover:bg-primary">
+                    {% partial 'icon' icon=obService.icon s=3 %}
+                </div>
+                <div class="mr-4">
+                    <h5 class="text-lg font-semibold mb-1">{{ obService.title }}</h5>
+                    <div class="mb-3">{{ obService.text }}</div>
+                    <div href="blog-single.html" class="inline-flex px-1 py-0.5 text-primary transition-all group-hover:bg-primary group-hover:text-gray-700 group-hover:border-primary border rounded-tr-lg">
+                        {% partial 'icon' icon='caret-right-bold' s=1 %}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="plans-section overflow-hidden relative isolate">
+    <img class="absolute w-full h-full object-cover z-[-1]" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/background/body-bg-1.jpg" alt="">
+    <div class="container py-16">
+        <div class="grid lg:grid-cols-2 gap-10">
+            <div class="flex items-center justify-center">
+                <div class="isolate relative mr-9 mb-9 before:absolute before:left-7 before:top-20 before:-right-4 before:-bottom-4 before:border-2 before:border-primary before:rounded-3xl">
+                    <img class="absolute inset-0 scale-110 z-[-1]" src="{{ 'assets/images/index/lines.svg' | theme }}" alt="">
+                    <img class="relative block w-full rounded-3xl" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/resource/image-1.jpg" alt="">
+                </div>
+            </div>
+            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                <div class="text-white">
+                    <h4 class="text-3xl font-semibold font-serif">Plans and strategies that improve  your online presence</h4>
+                    <div class="mt-4">
+                        <p>Альбус — компания, анализирующая потребности и бизнес-процессы организаций. Работаем с 2018 года, занимаемся автоматизацией бизнеса, управлением активами и инвестиций, финансовым аудитом и оказываем услуги лизинга и юридической практики..</p>
+                        <!-- <p>Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit.</p> -->
+                        <ul class="mt-4 space-y-3">
+                            {% for i in 1..4 %}
+                            <li class="flex items-center">
+                                {% partial 'icon' icon='microphone' css='text-primary' s=2 %}
+                                <span class="ml-3">Digital Marketing</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+</section>
+
+<section class="pricelist">
+    <div class="container">
+
+    </div>
+</section>
+
+{% set arContacts = [
+    {
+        icon: 'assets/images/contacts/mappin.svg' | theme,
+        title: 'HEAD OFFICE',
+        text: '915 Hilldale Lane Maryville, TN 37803, United States'
+    },
+    {
+        icon: 'assets/images/contacts/phone.svg' | theme,
+        title: 'CALL US',
+        text: '+91 386-454-0624(Toll Free)<br>+91 386-433-9096'
+    },
+    {
+        icon: 'assets/images/contacts/email.svg' | theme,
+        title: 'EMAIL US',
+        text: 'contact.dealer@example.com<br>servicecenter@domain.com'
+    },
+] %}
+
+<section class="contacts">
+    <div class="container py-12">
+        <div class="grid lg:grid-cols-3">
+            {% for obItem in arContacts %}
+            <div class="flex items-center flex-col px-8 border-l border-r">
+                <img class="mb-6" src="{{ obItem.icon }}" alt="">
+                <div class="text-gray-500 uppercase font-semibold mb-4">{{ obItem.title }}</div>
+                <p class="text-center font-medium">{{ obItem.text | raw }}</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<section class="py-12">
+    <div class="container">
+        <div class="grid grid-cols-3 gap-6">
+            {% for obItem in 1..3 %}
+            <div class="group rounded-3xl overflow-hidden border-2 shadow-card">
+                <img class="transition-all duration-500 group-hover:scale-105 w-full" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/resource/news-{{ loop.index }}.jpg" alt="">
+                <div class="relative text-center text-white bg-[#35383b] px-8 pt-4">
+                    <h4 class="mb-4 text-xl font-bold"><a href="blog-single.html">California abandons plan to tax text messages</a></h4>
+                    <!-- <div class="flex">
+                        <div class="cat i-block"><i class="far fa-folder"></i> books</div>
+                        <div class="time i-block"><i class="far fa-clock"></i> 2 hours ago</div>
+                    </div> -->
+                    <div class="inline-flex font-semibold text-primary bg-[#2e2f32] py-4 px-6 rounded-t-3xl transition-all group-hover:text-[#2e2f32] group-hover:bg-primary">
+                        <span class="mr-2">continue reading</span> {% partial 'icon' icon='arrow-right-bold' s=1 %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

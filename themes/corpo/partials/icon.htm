@@ -1,0 +1,15 @@
+{% if wh is iterable %}
+    {% set w = wh[0] %}
+    {% set h = wh[1] %}
+{% else %}
+    {% set w = wh %}
+    {% set h = wh %}
+{% endif %}
+{% if s %}
+    {% set sizes = {1: '20px', 2: '25px', 3: '30px', 4: '35px', 5: '48px', 6: '60px'} %}
+    {% set w = sizes[s] %}
+    {% set h = sizes[s] %}
+{% endif %}
+<svg class="{{ css }}" role="presentation" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" width="{{ w }}" height="{{ h }}">
+    <use xlink:href="{{ ('assets/images/common/icons.svg#' ~ icon) | theme }}"></use>
+</svg>
