@@ -1,0 +1,42 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    active:
+        label: Активность
+        type: switch
+    category:
+        label: Категория
+        relation: category
+        select: name
+
+    name:
+        label: Наименование
+
+    title:
+        label: Заголовок
+
+    subtitle:
+        label: Подзаголовок
+
+    text:
+        label: Текст
+        type: summary   
+
+    image:
+        label: Картинка
+        type: image
+
+    background:
+        label: Задний фон
+        type: image
+
+    theme:
+        label: Тема
+        type: selectable
+
+    id:
+        label: ID
+        searchable: true
+

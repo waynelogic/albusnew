@@ -1,0 +1,12 @@
+[CategoryList]
+==
+{% set obCategoryList = CategoryList.make().tree() %}
+<div class="bg-gray-100 py-12 shadow-inner">
+    <div class="container">
+        <div class="grid lg:grid-cols-3 gap-8">
+            {% for obCategory in obCategoryList %}
+                {% partial 'products/category/list/item' obCategory=obCategory  %}
+            {% endfor %}
+        </div>
+    </div>
+</div>

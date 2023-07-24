@@ -1,0 +1,105 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Наименование
+        span: auto
+        type: text
+        
+    slug:
+        label: URL
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+tabs:
+    fields:
+        preview_text:
+            tab: Услуга
+            label: Короткое описание
+            size: tiny
+            span: full
+            type: textarea
+        category:
+            tab: Услуга
+            label: Категория услуг
+            type: relation
+            span: auto
+
+        price_type:
+            tab: Услуга
+            label: Тип цены
+            type: dropdown
+            span: auto
+
+        price:
+            tab: Услуга
+            label: Цена
+            type: number
+            cssClass: oc-icon-tags
+            span: auto
+        old_price:
+            tab: Услуга
+            label: Старая цена
+            type: number
+            cssClass: oc-icon-percent
+            span: auto
+        deadline:
+            tab: Услуга
+            label: Срок выполнения
+            type: text
+            span: auto
+        active:
+            tab: Услуга
+            label: Активность
+            default: true
+            type: switch
+            span: auto
+
+        #Content
+        # content:
+        #     tab: Контент
+        #     type: editorjs
+        #     span: full
+        content:
+            tab: Контент
+            type: repeater
+            displayMode: builder
+            prompt: Добавить блок
+            groups: $/albus/corporate/models/service/blocks.yaml
+            form:
+                fields:
+                    added_at:
+                        label: Date added
+                        type: datepicker
+                    details:
+                        label: Details
+                        type: textarea
+
+        # Images
+        image:
+            tab: Изображения
+            label: Иконка (IMG)
+            type: fileupload
+            mode: image
+            span: auto
+        background:
+            tab: Изображения
+            label: Фон
+            type: fileupload
+            mode: image
+            span: auto
+        cover:
+            tab: Изображения
+            label: Обложка на карточку
+            type: fileupload
+            mode: image
+        gallery:
+            tab: Изображения
+            label: Изображения
+            type: fileupload
+            mode: image

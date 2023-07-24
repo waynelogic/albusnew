@@ -1,3 +1,7 @@
+[staticMenu FooterMenu]
+code = "footer"
+==
+{% set arItems = FooterMenu.menuItems %}
 <footer class="bg-[#2f3338] text-silver py-20">
     <div class="container">
         <div class="grid md:grid-cols-12 gap-6 pb-20">
@@ -17,15 +21,15 @@
                 <a class="text-white uppercase font-bold transition-all duration-300 hover:text-primary" href="{{ 'common/contacts' | page }}">Контакты</a>
                 <div class="">
                     <a href="tel:{{ this.theme.phone | replace({' ': '', '-': '', '(': '', ')': ''}) }}" class="flex w-full text-white py-4  items-center transition-all hover:shadow-out" title="Заказать звонок">
-                        {% partial 'icon' icon='microphone' s=2 css='mr-4' %}
+                        {% partial 'ui/icon' icon='microphone' s=2 css='mr-4' %}
                         <span class="">{{ this.theme.phone }}</span>
                     </a>
                     <a href="mailto:{{ this.theme.email }}" class="flex w-full text-white py-4  items-center transition-all hover:shadow-out" title="Заказать звонок">
-                        {% partial 'icon' icon='envelope-open' s=2 css='mr-4' %}
+                        {% partial 'ui/icon' icon='envelope-open' s=2 css='mr-4' %}
                         <span class="">{{ this.theme.email }}</span>
                     </a>
                     <a href="{{ this.theme.map_link }}" class="flex w-full text-white py-4  items-center transition-all hover:shadow-out" title="Заказать звонок">
-                        {% partial 'icon' icon='map-pin' s=2 css='mr-4' %}
+                        {% partial 'ui/icon' icon='map-pin' s=2 css='mr-4' %}
                         <span class="">{{ this.theme.address | raw }}</span>
                     </a>
                 </div>
@@ -39,7 +43,7 @@
                 <li class="m-1 inline-block">
                     <a href="{{ obSocial.url }}" class="relative text-white flex items-center justify-center w-11 h-11 rounded border transition-all opacity-50 hover:opacity-100" target="_blank">
                         <span class="absolute opacity-0">{{ obSocial.name }}</span>
-                        {% partial 'icon' icon=obSocial.name s=1 %}
+                        {% partial 'ui/icon' icon=obSocial.name s=1 %}
                     </a>
                 </li>
                 {% endfor %}

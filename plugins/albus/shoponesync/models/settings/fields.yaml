@@ -1,0 +1,228 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+tabs:
+    fields:
+        login:
+            tab: lovata.toolbox::lang.tab.settings
+            label: albus.shopaholicx1c::lang.field.login
+            span: left
+
+        catalog_accept_as_zip:
+            tab: lovata.toolbox::lang.tab.settings
+            label: albus.shopaholicx1c::lang.field.catalog_accept_as_zip
+            comment: albus.shopaholicx1c::lang.comment.catalog_accept_as_zip
+            type: switch
+            span: right
+
+        password:
+            tab: lovata.toolbox::lang.tab.settings
+            label: albus.shopaholicx1c::lang.field.password
+            span: left
+
+        catalog_max_file_size:
+            tab: lovata.toolbox::lang.tab.settings
+            label: Размер архива (в байтах)
+            comment: albus.shopaholicx1c::lang.comment.catalog_max_file_size
+            type: number
+            span: right
+
+        address_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.address_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        postcode_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.postcode_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        country_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.country_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        city_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.city_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        street_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.street_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        house_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.house_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        flat_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.flat_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        name_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.name_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        last_name_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.last_name_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        middle_name_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.middle_name_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        email_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.email_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        phone_property:
+            tab: lovata.toolbox::lang.tab.properties
+            label: albus.shopaholicx1c::lang.field.phone_property
+            list: $/lovata/ordersshopaholic/models/orderproperty/columns.yaml
+            modelClass: Lovata\OrdersShopaholic\Models\OrderProperty
+            keyFrom: code
+            nameFrom: name
+            descriptionFrom: code
+            required: true
+            type: recordfinder
+            useRelation: false
+            span: left
+
+        dateLastUpdate:
+            tab: lovata.toolbox::lang.tab.settings
+            label: Дата последней синхронизации
+            type: datepicker
+            disabled: true
+
+        cleanFolder:
+            tab: lovata.toolbox::lang.tab.settings
+            label: Очищать папку обмена?
+            type: switch
+            span: auto
+
+        zip:
+            tab: lovata.toolbox::lang.tab.settings
+            label: Поддержка ZIP
+            type: switch
+            span: auto
+
+        mainPrice:
+            tab: lovata.toolbox::lang.tab.settings
+            label: Использовать только основную цену?
+            type: switch
+            span: auto
+ 
+        oneWarehouse:
+            tab: lovata.toolbox::lang.tab.settings
+            label: Использовать только основной склад
+            type: switch
+            span: auto
+
+        producerGuid:
+            tab: lovata.toolbox::lang.tab.settings
+            label: Ид производителя
+            type: text
+            placeholder: bitrix/admin/1c_exchange.php
+            span: auto
+
+        exchangePath:
+            tab: lovata.toolbox::lang.tab.settings
+            label: Путь точки синхронизации
+            type: text
+            placeholder: bitrix/admin/1c_exchange.php
+            span: auto

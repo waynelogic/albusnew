@@ -1,0 +1,38 @@
+[CategoryList]
+==
+{% set obCategoryList = CategoryList.make().tree() %}
+<div class="shadow-md rounded-2xl border border-[#ececec] p-6">
+    <h5 class="relative mb-8 border-b text-[#253D4E] font-bold border-[#ececec] pb-5 text-2xl after:content-[''] after:absolute after:w-20 after:h-[2px] after:bg-primary after:bottom-0 after:left-0">Категории</h5>
+    <ul class="space-y-3 ">
+        {% for obCategory in obCategoryList %}
+        <li class="flex items-center justify-between px-4 py-2 rounded-md border border-[#F2F3F4] hover:shadow-md hover:border-[#BCE3C9] transition-all duration-300">
+            <a href="shop-grid-right.html" class="text-[#253D4E] flex items-center">
+                <img class="mr-3" src="{{ obCategory.icon.path }}" alt="{{ obCategory.name }}" title="{{ obCategory.name }}" width="30px" height="30px">
+                {{ obCategory.name }}
+            </a>
+            <span class="flex items-center justify-center bg-primary/20 p-1 rounded-full text-sm w-6 h-6">{{ obCategory.product_count }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+</div>
+
+
+{% set obProductList = ProductList.make().sort('new').active() | slice (0, 3) %}
+<div class="shadow-md rounded-2xl border border-[#ececec] p-6">
+    <h5 class="relative mb-8 border-b text-[#253D4E] font-bold border-[#ececec] pb-5 text-2xl after:content-[''] after:absolute after:w-20 after:h-[2px] after:bg-primary after:bottom-0 after:left-0">Новинки</h5>
+    <ul>
+        {% for obProduct in obProductList %}
+        {% set obOffer = obProduct.offer.sort('price|desc').first %}
+        <div class="flex items-center">
+            <img width="80px" height="80px" class="mr-3 rounded-md shadow-md"src="{{ obProduct.preview_image.path ? obProduct.preview_image.path : 'assets/images/common/no-image.png' | theme }}" alt="#">
+            <div>
+                <h5 class="text-primary font-bold text-base line-clamp-1"><a href="shop-product-detail.html">{{ obProduct.name }}</a></h5>
+                <p class="mt-2 text-gray-400">{{ obOffer.price ~ ' ' ~ obOffer.currency }}</p>
+            </div>
+        </div>
+        {% if not loop.last %}
+        <hr class="my-3">
+        {% endif %}
+        {% endfor %}
+    </ul>
+</div>

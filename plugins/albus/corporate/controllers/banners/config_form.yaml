@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Banner
+
+# Model Form Field configuration
+form: $/albus/corporate/models/banner/fields.yaml
+
+# Model Class name
+modelClass: Albus\Corporate\Models\Banner
+
+# Default redirect location
+defaultRedirect: albus/corporate/banners
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/corporate/banners/update/:id
+    redirectClose: albus/corporate/banners
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/corporate/banners
+    redirectClose: albus/corporate/banners
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

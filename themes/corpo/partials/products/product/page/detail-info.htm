@@ -1,0 +1,119 @@
+{% set obOffer = obProduct.offer.sort('price|desc').first %}
+<form class="detail-info" id="cartForm" data-lazy="shop">
+    <div class="detail-info pr-30 pl-30">
+        <span class="inline-block px-3 py-2 bg-[#fde0e9] text-[#f74b81] text-sm font-bold rounded-md mb-5">{{ obProduct.category.name }}</span>
+        <h2 class="text-4xl font-bold text-[#253D4E] mb-2">{{ obProduct.name }}</h2>
+        <div class="text-[#253D4E] mb-4">
+            <b>Артикул: </b>{{ obProduct.code }}
+        </div>
+        {% if obOffer.price %}
+        <div class="clearfix product-price-cover">
+            <div class="flex items-center">
+                <span class="text-primary font-bold text-5xl mb-6">{{ obOffer.price ? obOffer.price ~ ' ' ~ obOffer.currency : '-' }}</span>
+            </div>
+        </div>
+        {% endif %}
+        {% if obProduct.description %}
+        <div class="short-desc mb-6">
+            <p class="text-[#7E7E7E] text-lg line-clamp-3">{{ obProduct.description | slice(0, 200) }}</p>
+        </div>
+        {% endif %}
+    </div>
+    <div class="flex mb-6">
+        {% if obProduct.offer.count > 1 %}
+            <div class="flex space-x-4">
+                {% for obOffer in obProduct.offer %}
+                    {% set sOfferName = obOffer.name %}
+                    {% if obOffer.property.isNotEmpty == true %}
+                        {% set newname = '' %}
+                        {% for obProeprty in obOffer.property %}
+                            {% if obProeprty.hasValue() %}
+                                {% set prop = obProeprty.property_value.getValueString() %}
+                                {% set newname = newname ~ prop %}
+                            {% endif %}
+                        {% endfor %}
+                        {% set sOfferName = newname %}
+                    {% endif %}
+                    <div>
+                        <input type="radio" name="offer_id" id="offer-{{ obOffer.id }}" class="peer hidden" value="{{ obOffer.id }}" {{ loop.first ? 'checked' }}/>
+                        <label for="offer-{{ obOffer.id }}" class="block cursor-pointer select-none rounded px-4 py-2 text-center bg-[#ababab] peer-checked:bg-primary font-bold text-white">{{ sOfferName }}</label>
+                    </div>
+                {% endfor %}
+            </div>
+        {% else %}
+            <input type="hidden" name="offer_id" value="{{ obOffer.id }}">
+        {% endif %}
+        <button type="submit" class="btn bg-[#1d2023] text-white rounded-lg w-full">
+            {% partial 'ui/icon' icon='shopping-cart' s=1 %}
+            <span class="ml-2">Заказать</span>
+        </button>
+    </div>
+</form>
+
+{% set arUserData = {
+    'name': 'Вася',
+    'email': 'info@albus-it.ru'
+} %}
+{#
+{% put scripts %}
+<script type="text/javascript">
+    function initCart() {
+        var $offerButtons = document.querySelectorAll('.offer-button')
+        $offerButtons.forEach(function (offer) {
+            offer.addEventListener('click', function () {
+                var $offerId = this.dataset.offer;
+                var $products = {
+                    'cart': [
+                        { 'offer_id': $offerId, 'quantity': 1 },
+                    ]
+                };
+                var $status = undefined;
+                console.log($products);
+
+                function addProduct($status, $products) {
+                    oc.ajax('Cart::onAdd', {
+                        'data': $products,
+                        success: function (obResponse) {
+                            console.log('Товар добавлен');
+                            oc.flashMsg({ 'text': 'Ждите пока вас перекинет в корзину!', 'class': 'success', 'interval': 10 });
+                            $status = 'sucsess';
+                            console.log($status);
+                            makeOrder();
+                        }
+                    });
+                }
+
+                function makeOrder() {
+                    let $order = {
+                        'order': {
+                            'payment_method_id': 1,
+                            'shipping_type_id': 1,
+                        },
+                        'user': {{ arUserData| json_encode() | raw
+                }
+            },
+                    };
+        console.log($order);
+        oc.ajax('MakeOrder::onCreate', {
+            'data': $order,
+            success: function (obResponse) {
+                oc.flashMsg({ 'text': 'Заказ успешно создан!', 'class': 'success', 'interval': 10 });
+                console.log(obResponse)
+                if (obResponse.X_OCTOBER_REDIRECT) {
+                    window.location.href = obResponse.X_OCTOBER_REDIRECT;
+                }
+            }
+        })
+    }
+    addProduct($status, $products);
+            })
+        });
+    }
+    try {
+        initCart();
+    } catch (error) {
+        console.log(error.message);
+    }
+</script>
+{% endput %}
+#}

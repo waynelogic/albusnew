@@ -1,0 +1,25 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    active:
+        label: Активность
+        type: switch
+    name:
+        label: Наименование
+        type: text
+        
+    email[0]:
+        label: Почта
+
+    phone[0]:
+        label: Телефон
+
+    preview_text:
+        label: Описание
+        type: summary
+
+    id:
+        label: ID
+        searchable: true

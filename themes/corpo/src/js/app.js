@@ -2,22 +2,21 @@ window.slider = function(object){
     import('./components/swiper-slider.js').then(({ default : initCarousel }) => initCarousel(object) );
 }
 
-window.lightbox = function(object){
-    import('./components/lightbox').then(({ default : initLightbox }) => initLightbox(object) );
+window.ajaxModal = function(object){
+    import('./components/modalAjax').then(({ default : init }) => init(object) );
 }
 
-window.cartCounter = function(object){
-    import('./components/cartCounter').then(({ default : initCounter }) => initCounter(object) );
+window.modal = function(object){
+    import('./components/modal').then(({ default : init }) => init(object) );
 }
 
-window.shop = function(object){
-    import('./components/shop').then(({ default : initShop }) => initShop(object) );
+window.accordion = function(object){
+    import('./components/accordion').then(({ default : init }) => init(object) );
 }
 
 window.onload = () => {
-    import('./components/header').then(({ default : initHeader }) => initHeader() );
+    // import('./components/header').then(({ default : initHeader }) => initHeader() );
     import('./components/dropdown').then(({ default : initDropdown }) => initDropdown());
-    import('./components/modal').then(({ default : initModal }) => initModal());
     const cloak = document.querySelectorAll('[x-cloak]');
     cloak.forEach(element => {
         element.removeAttribute('x-cloak');
@@ -44,3 +43,34 @@ window.onload = () => {
         server.observe(element);
     })
 }
+
+class TabManager {
+    constructor(element) {
+        this.tabArea = element;
+        this.tabs = this.tabArea.querySelectorAll('[data-tab]');
+        this.buttons = this.tabArea.querySelectorAll('[data-tab-button]');
+        this.buttons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                this.changeTab(e.target);
+            });
+        });
+    }
+    changeTab(button) {
+        let aimTab = button.dataset.tabButton;
+        this.tabs.forEach(tab => {
+            if (tab.dataset.tab == aimTab) {
+                tab.classList.add('active');
+            } else {
+                tab.classList.remove('active');
+            }
+        });
+        this.buttons.forEach(button => {
+            if (button.dataset.tabButton == aimTab) {
+                button.classList.add('active');
+            } else {
+                button.classList.remove('active');
+            }
+        });
+    }
+}
+

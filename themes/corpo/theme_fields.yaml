@@ -1,0 +1,100 @@
+tabs:
+    fields:
+        site_settings:
+            tab: Главное
+            label: Настройки сайта
+            span: full
+            type: section
+
+
+        site_name:
+            tab: Главное
+            label: Название сайта
+            comment: Название сайта которе будет показываться во front-end
+            default: Альбус
+            span: auto
+
+        social_links:
+            tab: Главное
+            label: 'Список социальных сетей'
+            prompt: 'Добавить ссылку'
+            span: auto
+            type: repeater
+            form:
+                fields:
+                    name:
+                        label: Название
+                        span: auto
+                        type: text
+                    icon:
+                        label: Иконка
+                        span: auto
+                        type: codeeditor
+                        size: tiny
+                    url:
+                        label: Ссылка
+                        span: full
+                        type: text
+
+        email:
+            tab: Главное
+            label: Почта
+            span: auto
+            type: email
+
+        phone:
+            tab: Главное
+            label: Телефон
+            span: auto
+
+        address:
+            tab: Главное
+            label: Адрес
+            span: auto
+
+        map_link:
+            tab: Главное
+            label: Ссылка на карту
+            span: auto
+
+        schedule:
+            tab: Главное
+            label: Режим работы
+            span: auto
+
+        legal_data:
+            tab: Главное
+            type: nestedform
+            showPanel: true
+            label: Юридические данные
+            form:
+                fields:
+                    org_name:
+                        label: Наименование
+                        type: text
+                    org_tin:
+                        label: ИНН
+                        type: text
+                    org_ogrn:
+                        label: ОГРН
+                        type: text
+                    bank_name:
+                        label: Наименование банка
+                        type: text
+                    bank_bic:
+                        label: БИК
+                        type: text
+                    bank_сhecking_account:
+                        label: Расчетный счет
+                        type: text
+                    bank_correspondent_account:
+                        label: Корр. счет
+                        type: text
+
+        robots:
+            label: Robots.txt
+            comment: "Доступны переменные: {{ url }} - адрес сайта, {{ backendUrl }} - админка"
+            default:
+            size: large
+            span: full
+            type: textarea

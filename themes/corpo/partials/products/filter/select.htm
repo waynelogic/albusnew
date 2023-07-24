@@ -1,0 +1,7 @@
+{% set activeVal = arAppliedPropertyList[obProperty.id] %}
+<select class="filter-item border-[#ededed] w-full" name="{{ obProperty.id }}" aria-label="{{ obProperty.filter_name }}">
+    <option selected value="">Не выбрано</option>
+    {% for obValue in obPropertyValueList %}
+        <option {{ activeVal == obValue.slug ? 'selected'  }} value="{{ obValue.slug }}">{{ obValue.value }}</option>
+    {% endfor%}
+</select>

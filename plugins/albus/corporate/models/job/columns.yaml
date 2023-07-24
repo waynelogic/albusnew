@@ -1,0 +1,40 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    active:
+        label: Активность
+        type: switch
+    type:
+        label: Тип работы
+        type: selectable
+        span: auto
+
+    name:
+        label: Наименование
+        type: text
+    slug:
+        label: URL
+        type: text
+        
+    preview_text:
+        label: Описание
+        type: summary
+
+    salary:
+        label: Зарплата
+        type: text
+
+    experience:
+        label: Опыт работы
+        type: text
+
+    department:
+        label: Отдел
+        relation: department
+        select: name
+        
+    id:
+        label: ID
+        searchable: true

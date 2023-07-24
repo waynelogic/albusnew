@@ -1,0 +1,29 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    active:
+        label: Активность
+        type: switch
+    avatar:
+        label: Аватар
+        type: image
+
+    full_name:
+        label: ФИО
+
+    email:
+        label: Почта
+
+    phone:
+        label: Телефон
+
+    department:
+        label: Отдел
+        relation: department
+        select: name
+
+    id:
+        label: ID
+        searchable: true

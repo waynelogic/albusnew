@@ -5,12 +5,22 @@
 @tailwind utilities;
 
 @layer base {
+    button * {
+        @apply pointer-events-none;
+    }
+    body {
+        @apply text-[#1d2023];
+    }
     .container {
         @apply mx-auto;
     }
 }
 
 @layer components {
+    .site-navbar.fx {
+        @apply fixed bg-white;
+    }
+
     .swiper {
         @apply relative;
     }
@@ -31,5 +41,20 @@
     }
     .btn-white {
         @apply text-[#0F0F0F] bg-white hover:bg-primary-600;
+    }
+    .form-control {
+        @apply rounded-lg border-2 border-gray-200 outline-none transition-all focus:border-primary block shadow-sm focus:ring focus:ring-primary focus:ring-opacity-50;
+    }
+
+
+    .modal {
+        @apply hidden;
+    }
+    .modal.show {
+        @apply block;
+    }
+
+    .accordion .accordion-collapse.open {
+        @apply overflow-visible;
     }
 }

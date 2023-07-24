@@ -1,0 +1,84 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    active:
+        label: Активность
+        default: true
+        type: switch
+        span: full
+    name:
+        label: Наименование
+        span: auto
+        type: text
+        placeholder: Art House
+        
+    slug:
+        label: URL
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+
+tabs:
+    fields:
+        description:
+            tab: Описание
+            size: giant
+            span: adaptive
+            type: richeditor
+
+        legal_name:
+            tab: Общая информация
+            label: Наименование
+            span: auto
+            type: text
+            placeholder: 'ООО "Артхаус"'
+
+        type:
+            tab: Общая информация
+            label: Вид контрагента
+            type: balloon-selector
+            span: auto
+
+        relations:
+            tab: Общая информация
+            label: Отношения
+            type: checkboxlist
+            inlineOptions: true
+            quickselect: true
+            span: auto
+
+        website:
+            tab: Общая информация
+            label: Сайт
+            span: auto
+            type: text
+            
+        preview_text:
+            tab: Общая информация
+            label: Короткое описание
+            size: tiny
+            span: full
+            type: textarea
+
+        logo:
+            tab: Изображения
+            label: Логотип
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            maxFiles: 1
+            
+        gallery:
+            tab: Изображения
+            label: Галерея
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+            maxFiles: 1

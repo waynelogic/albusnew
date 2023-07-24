@@ -1,0 +1,81 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    active:
+        label: Активность
+        default: true
+        type: switch
+        span: full
+        
+    category:
+        label: Категория
+        type: relation
+        emptyOption: '- Без категории'
+
+    name:
+        label: Наименование
+        span: auto
+        type: text
+        
+    slug:
+        label: URL
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+
+    title:
+        label: Заголовок
+        span: auto
+        type: text
+        required: 1
+
+    subtitle:
+        label: Подзаголовок
+        span: auto
+        type: text
+
+    text:
+        label: Текст
+        span: full
+        type: textarea
+
+    image:
+        label: Картинка
+        span: auto
+        type: fileupload
+        fileTypes: mp3, mp4, jpg, jpeg, webp, png
+        maxitems: 1
+
+    background:
+        label: Задний фон
+        span: auto
+        type: fileupload
+        maxitems: 1
+        
+    theme:
+        label: Тема
+        span: auto
+        type: balloon-selector
+        default: light
+
+    buttons:
+        label: Кнопки
+        prompt: 'Добавить кнопку'
+        span: full
+        type: repeater
+        maxItems: 2
+        form:
+            fields:
+                title:
+                    label: Текст кнопки
+                    span: auto
+                    type: text
+                url:
+                    label: Ссылка
+                    type: pagefinder
+                    span: auto

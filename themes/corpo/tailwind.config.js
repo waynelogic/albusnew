@@ -12,8 +12,10 @@ module.exports = {
         DEFAULT: '250ms'
       },
       fontFamily: {
-        'sans': ['Montserrat'],
-        'serif': ['Ysabeau Office'],
+        'sans': ['Mont'],
+        'serif': ['Comfortaa'],
+        // 'serif': ['Playfair Display'],
+        // 'serif': ['Ysabeau Office'],
       },
       brightness: {
         25: '.25',
@@ -36,7 +38,8 @@ module.exports = {
       boxShadow: {
         'in': '0 0 0 1px #ebecec',
         'out' : '0 5px 25px 0 #1219261a',
-        'card' : '0 0 20px rgba(146,145,145,.4)'
+        'card' : '0 0 20px rgba(146,145,145,.4)',
+        'round' : '0 6px 30px rgba(0,0,0,.1)'
       },
       colors: {
         'silver' : {
@@ -63,5 +66,8 @@ module.exports = {
       },
     },
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+    require('@tailwindcss/forms'),
+  ],
 }

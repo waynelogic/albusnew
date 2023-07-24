@@ -1,0 +1,7 @@
+.field-checkboxlist .field-checkboxlist-inner  {
+    display: flex;
+    flex-wrap: wrap;
+}
+.field-checkboxlist .form-check {
+    margin-right: 10px;
+}

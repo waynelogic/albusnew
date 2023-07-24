@@ -1,0 +1,159 @@
+items:
+    -
+        title: Главная
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: home
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            class2: ''
+    -
+        title: Услуги
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: services/index
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: mega
+            isExternal: '0'
+            class2: ''
+        items:
+            -
+                title: 'Категории услуг'
+                nesting: null
+                type: all-service-categories
+                url: null
+                code: ''
+                reference: null
+                cmsPage: services/category
+                replace: 1
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                    class2: ''
+    -
+        title: Продукция
+        type: cms-page
+        code: ''
+        reference: products/list
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+            class2: ''
+        items:
+            -
+                title: Категории
+                type: all-shop-categories
+                code: ''
+                cmsPage: products/index
+                replace: 1
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                    class2: ''
+    -
+        title: Компания
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: company/index
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'О компании'
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/index
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Команда
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/staff
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Карьера
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/vacancy
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Партнеры
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/partners
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Отзывы
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/reviews
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Контакты
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: common/contacts
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: 'Главное меню'

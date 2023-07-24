@@ -1,0 +1,49 @@
+url = "/adasd"
+layout = "default"
+title = "Главная"
+==
+{% partial "home/hero" %}
+{% partial "home/services" %}
+{% partial 'home/new-live' %}
+{% partial 'home/packages' %}
+
+
+
+
+<section class="py-12">
+    <div class="container">
+        <div class="grid grid-cols-3 gap-6">
+            {% for obItem in 1..3 %}
+            <div class="group rounded-3xl overflow-hidden border-2 shadow-card">
+                <img class="transition-all duration-500 group-hover:scale-105 w-full" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/resource/news-{{ loop.index }}.jpg" alt="">
+                <div class="relative text-center text-white bg-[#35383b] px-8 pt-4">
+                    <h4 class="mb-4 text-xl font-bold"><a href="blog-single.html">California abandons plan to tax text messages</a></h4>
+                    <!-- <div class="flex">
+                        <div class="cat i-block"><i class="far fa-folder"></i> books</div>
+                        <div class="time i-block"><i class="far fa-clock"></i> 2 hours ago</div>
+                    </div> -->
+                    <div class="inline-flex font-semibold text-primary bg-[#2e2f32] py-4 px-6 rounded-t-3xl transition-all group-hover:text-[#2e2f32] group-hover:bg-primary">
+                        <span class="mr-2">continue reading</span> {% partial 'icon' icon='arrow-right-bold' s=1 %}
+                    </div>
+                </div>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+<!-- Модальное окно начало -->
+{% partial 'ui/modal' id='xxx' body %}
+Загрузка...
+{% put footer %}
+    <button class="btn btn-default" data-close>CLOSE</button>
+{% endput %}
+{% endpartial  %}
+<!-- Модальное окно начало -->
+
+<button class="btn btn-default" data-lazy="ajaxModal" data-modal-ajax="#xxx" data-modal-request="onModalGetContent" data-modal-partial="home/services">Открыть модалку</button>
+
+
+<form action="{{ 'site/search' | page }}" method="get">
+    <input type="text" name="search" placeholder="Поиск...">
+</form>

@@ -1,0 +1,21 @@
+# ===================================
+#  Relation Behavior Config
+# ===================================
+
+employees:
+    label: Сотрудник
+    view:
+        list: $/albus/corporate/models/employee/columns.yaml
+        toolbarButtons: create|delete|add|unlink
+    manage:
+        form: $/albus/corporate/models/employee/fields.yaml
+        recordsPerPage: 10
+
+jobs:
+    label: Вакансия
+    view:
+        list: $/albus/corporate/models/job/columns.yaml
+        toolbarButtons: create|delete|add|unlink
+    manage:
+        form: $/albus/corporate/models/job/fields.yaml
+        recordsPerPage: 10

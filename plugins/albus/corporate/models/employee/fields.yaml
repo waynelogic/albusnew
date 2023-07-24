@@ -1,0 +1,56 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    last_name:
+        label: Фамилия
+        span: row
+        spanClass: col-md-4
+
+    name:
+        label: Имя
+        span: row
+        spanClass: col-md-4
+
+    middle_name:
+        label: Отчество
+        span: row
+        spanClass: col-md-4
+
+tabs:
+    fields:
+        active:
+            label: Активность
+            default: true
+            type: switch
+            span: full
+        email:
+            label: Почта
+            span: auto
+            type: email
+
+        phone:
+            label: Телефон
+            span: auto
+
+        post:
+            label: Должность
+            span: auto
+
+        department:
+            label: Отдел
+            type: relation
+            span: auto
+        avatar:
+            label: Аватар
+            type: fileupload
+            mode: image
+            imageHeight: 260
+            imageWidth: 260
+
+        preview_text:
+            label: Описание
+            type: textarea
+            span: full
+

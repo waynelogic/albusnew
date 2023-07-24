@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Job
+
+# Model Form Field configuration
+form: $/albus/corporate/models/job/fields.yaml
+
+# Model Class name
+modelClass: Albus\Corporate\Models\Job
+
+# Default redirect location
+defaultRedirect: albus/corporate/jobs
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/corporate/jobs/update/:id
+    redirectClose: albus/corporate/jobs
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/corporate/jobs
+    redirectClose: albus/corporate/jobs
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

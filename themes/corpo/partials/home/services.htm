@@ -1,0 +1,24 @@
+[ServiceCategoryList]
+categoryPage = "services/category"
+==
+{% set arCategories = ServiceCategoryList.get() %}
+<section class="services bg-[#1B1B1B]">
+    <div class="container py-12">
+        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+            {% for obService in arCategories %}
+            <a href="{{ obService.url }}" class="group rounded-3xl flex items-center py-8 text-white bg-[#292c30] transition-all hover:bg-[#232529]">
+                <div class="px-5 py-3 mr-6 rounded-r-2xl text-gray-300 bg-[#36393c] transition-all group-hover:text-[#292c30] group-hover:bg-primary">
+                    {% partial 'icon' icon=obService.icon_svg s=3 %}
+                </div>
+                <div class="mr-4">
+                    <h5 class="text-lg font-semibold mb-1">{{ obService.name }}</h5>
+                    <div class="mb-3">{{ obService.preview_text }}</div>
+                    <div href="blog-single.html" class="inline-flex px-1 py-0.5 text-primary transition-all group-hover:bg-primary group-hover:text-gray-700 group-hover:border-primary border rounded-tr-lg">
+                        {% partial 'icon' icon='caret-right-bold' s=1 %}
+                    </div>
+                </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>

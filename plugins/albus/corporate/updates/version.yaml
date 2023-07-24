@@ -1,0 +1,12 @@
+1.0.1:
+    - First version of Corporate plugin by Albus Inc.
+    - create_banner_categories_table.php
+    - create_banners_table.php
+    - create_service_categories_table.php
+    - create_services_table.php
+    - create_departments_table.php
+    - create_employees_table.php
+    - create_jobs_table.php
+    - create_partners_table.php
+    - create_projects_table.php
+    # - seed_all_tables.php

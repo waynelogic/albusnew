@@ -1,0 +1,45 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Наименование
+        type: text
+        
+    preview_text:
+        label: Короткое описание
+        type: summary
+
+    category:
+        label: Категория
+        relation: category
+        select: name
+
+    price_type:
+        label: Тип цены
+        type: selectable
+
+    price:
+        label: Цена
+        type: number
+
+    old_price:
+        label: Старая цена
+        type: number
+
+    deadline:
+        label: Срок выполнения
+        type: text
+
+    active:
+        label: Активность
+        type: switch
+
+    cover:
+        label: Обложка
+        type: image
+
+    id:
+        label: ID
+        searchable: true

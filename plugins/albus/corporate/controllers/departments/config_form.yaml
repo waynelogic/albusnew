@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Department
+
+# Model Form Field configuration
+form: $/albus/corporate/models/department/fields.yaml
+
+# Model Class name
+modelClass: Albus\Corporate\Models\Department
+
+# Default redirect location
+defaultRedirect: albus/corporate/departments
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/corporate/departments/update/:id
+    redirectClose: albus/corporate/departments
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/corporate/departments
+    redirectClose: albus/corporate/departments
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

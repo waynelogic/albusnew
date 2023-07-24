@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Service Category
+
+# Model Form Field configuration
+form: $/albus/corporate/models/servicecategory/fields.yaml
+
+# Model Class name
+modelClass: Albus\Corporate\Models\ServiceCategory
+
+# Default redirect location
+defaultRedirect: albus/corporate/servicecategories
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/corporate/servicecategories/update/:id
+    redirectClose: albus/corporate/servicecategories
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/corporate/servicecategories
+    redirectClose: albus/corporate/servicecategories
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

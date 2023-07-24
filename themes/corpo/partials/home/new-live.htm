@@ -1,0 +1,52 @@
+<section class="plans-section overflow-hidden relative isolate">
+    <img class="absolute w-full h-full object-cover z-[-1]" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/background/body-bg-1.jpg" alt="">
+    <div class="container py-16">
+        <div class="grid lg:grid-cols-2 gap-10">
+            <a class="group flex items-center justify-center cursor-pointer">
+                <div class="isolate relative mr-9 mb-9 before:absolute before:left-7 before:top-20 before:-right-4 before:-bottom-4 before:border-2 before:border-primary before:rounded-3xl">
+                    <img class="absolute inset-0 scale-110 z-[-1]" src="{{ 'assets/images/index/lines.svg' | theme }}" alt="">
+                    <div class="relative">
+                        <div class="absolute bg-white w-full h-full rounded-3xl">
+
+                        </div>
+                        <div class="hover:shadow-lg hover:text-gray-700 opacity-0 absolute left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2 inline-flex items-center justify-center rounded-full bg-primary text-white p-4 z-10 transition-all duration-500 group-hover:opacity-100 group-hover:scale-105">
+                            {% partial 'icon' icon='newspaper' s=6 %}
+                        </div>
+                        <img class="transition-all duration-500 relative block w-full rounded-3xl group-hover:opacity-0" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/resource/image-1.jpg" alt="">
+                    </div>
+                </div>
+            </a>
+            <div class="text-col col-lg-6 col-md-12 col-sm-12">
+                <div class="text-white">
+                    <h4 class="text-3xl font-semibold font-serif">Начни жизнь с чистого листа</h4>
+                    <div class="mt-4">
+                        <p>Альбус — компания, анализирующая потребности и бизнес-процессы организаций. Работаем с 2018 года, занимаемся автоматизацией бизнеса, управлением активами и инвестиций, финансовым аудитом и оказываем услуги лизинга и юридической практики..</p>
+                        {% set arPoints = [
+                            {
+                                title: 'Качественный веб-сайт - позволит привлечь новых клиентов.',
+                                icon: 'browsers'
+                            },
+                            {
+                                title: 'Правильно настроенная система учета - обеспечит надежную финансовую базу.',
+                                icon: 'handshake'
+                            },
+                            {
+                                title: 'Эффективная работа менеджеров - профессионализм менеджеров сделает бизнес более успешным и устойчивым.',
+                                icon: 'user-circle'
+                            },
+                        ] %}
+                        <ul class="mt-4 space-y-4">
+                            {% for obItem in arPoints %}
+                            <li class="flex items-center">
+                                {% partial 'icon' icon=obItem.icon css='text-primary shrink-0' s=4 %}
+                                <span class="ml-3">{{ obItem.title }}</span>
+                            </li>
+                            {% endfor %}
+                        </ul>
+                        <a href="https://muffle.droitlab.com/contact/" class="mt-4 btn btn-default">Подробнее</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>

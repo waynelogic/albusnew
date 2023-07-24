@@ -1,0 +1,38 @@
+url = "/products/:category*/:slug?"
+layout = "default"
+title = "Каталог товаров"
+
+[CategoryPage]
+slug = "{{ :slug }}"
+slug_required = 0
+smart_url_check = 1
+has_wildcard = 0
+skip_error = 1
+
+[CategoryPage MainCategoryPage]
+slug = "{{ :category }}"
+slug_required = 1
+smart_url_check = 1
+has_wildcard = 1
+skip_error = 0
+
+[ProductPage]
+slug = "{{ :slug }}"
+slug_required = 0
+smart_url_check = 1
+skip_error = 1
+
+[ProductList]
+sorting = "no"
+
+[Catalog]
+==
+{% put breadcrumbs %}
+    {% partial 'common/breadcrumbs/items' arItems=arBreadcrumbs %}
+{% endput %}
+{% if obProduct.isNotEmpty() %}
+    {% put hide_br_title = 'true' %}
+    {% partial 'products/product/page/container' obProduct=obProduct %}
+{% else %}
+    {% partial 'products/category/page/container' obProduct=obProduct %}
+{% endif %}

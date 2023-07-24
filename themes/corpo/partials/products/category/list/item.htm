@@ -1,0 +1,13 @@
+{% set url = obCategory.getPageUrl('products/index') %}
+<a href="{{ url }}" data-id="{{ obActiveCategory.id }}" itemscope itemtype="http://schema.org/Category" class="group rounded-2xl bg-white border border-[#eff1f5] shadow-sm transition-all duration-300 hover:shadow-out">
+    <div class="p-10 flex items-center">
+        {% if obCategory.icon  %}
+        <img class="mr-10" src="{{ obCategory.icon.path }}" alt="{{ obCategory.name }}" title="{{ obCategory.name }}" width="70px" height="70px">
+        {% endif %}
+        <div>
+            <h4 itemprop="name" class="text-2xl font-semibold mb-3 transition-all group-hover:text-secondary group-hover:scale-110">{{ obCategory.name }}</h4>
+            <p itemprop="description" class="mb-2">{{ obCategory.preview_text }}</p>
+            <span class="mt-3 font-bold text-primary/80">{{ obCategory.product_count }} товаров</span>
+        </div>
+    </div>
+</a>

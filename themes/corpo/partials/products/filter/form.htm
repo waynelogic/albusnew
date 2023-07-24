@@ -1,0 +1,92 @@
+{% set sorting = {
+    id: 'sort',
+    obPropertyValueList: [
+        {
+            value: 'Новые',
+            slug: 'new'
+        },
+        {
+            value: 'Сначала недорогие',
+            slug: 'price|asc'
+        },
+        {
+            value: 'Сначала дорогие',
+            slug: 'price|desc'
+        },
+    ]
+} %}
+<form id="filter-form" method="post">
+    <ul class="grid border border-[#eff1f5]">
+        <li class="border border-[#eff1f5] p-6">
+            <div class="text-lg mb-5">Цена, ₽</div>                        
+            <div class="grid grid-cols-2 max-w-md bg-[#f8f9fb] border border-[#ededed] rounded">
+                <input type="number" name="min_price" class="bg-transparent border-none border-r border-[#ededed] focus:ring-0" placeholder="300">
+                <input type="number" name="min_price" class="bg-transparent border-none focus:ring-0" placeholder="150050">
+            </div>
+        </li>
+        <li class="border border-[#eff1f5] p-6">
+            <div class="text-lg mb-5">Сортировка</div>                        
+            {% partial 'products/filter/select' obProperty=sorting obPropertyValueList=sorting.obPropertyValueList %}
+        </li>
+        {% if obPropertyList %}
+            {% for obProperty in obPropertyList | filter(obProperty => obProperty.hasValue()) %}
+                {% set sFilterType = obProperty.filter_type %}
+                {% set obPropertyValueList = obProperty.property_value.sort() %}
+                <li class="border border-[#eff1f5] p-6">
+                    <div class="text-lg mb-5">{{ obProperty.filter_name }}</div>       
+                    {% partial 'products/filter/' ~ sFilterType obProperty=obProperty obPropertyValueList=obPropertyValueList %}
+                </li>
+            {% endfor %}
+        {% endif %}
+    </ul>
+</form>
+<button type="button" id="clear-filter" class="btn-outline rounded-none w-full font-bold justify-center py-2">Очистить фильтр</button>
+
+<script>
+    const form = document.getElementById('filter-form');
+    let filter_items = document.querySelectorAll('.filter-item');
+
+    filter_items.forEach((item) => {
+        item.addEventListener('change', function(item) {
+            item.preventDefault();
+            setGetParams();
+            onUpdateList();
+        });
+    });
+
+    const clearFilterButton = document.getElementById('clear-filter');
+    clearFilterButton.onclick = (button) => { 
+        form.reset();
+        let newRelativePathQuery = window.location.pathname;
+        history.pushState(null, '', newRelativePathQuery);
+        onUpdateList();
+    };
+
+
+    function setGetParams() {
+        const formData = new FormData(form);
+        const params = new URLSearchParams(formData);
+
+        if (params) {
+            let keysForDel = [];
+                params.forEach((value, key) => {
+                if (value == '') {
+                    keysForDel.push(key);
+                }
+            });
+            keysForDel.forEach(key => {
+                params.delete(key);
+            });
+            let newRelativePathQuery = window.location.pathname + '?' + params.toString();
+            history.pushState(null, '', newRelativePathQuery);
+        }
+    }
+
+    function onUpdateList() {
+        oc.ajax('ProductList::onAjaxRequest', {
+            update: { 'products/product/list/row': '#product-list' }
+        })
+    }
+    
+
+</script>

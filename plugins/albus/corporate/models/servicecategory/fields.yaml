@@ -1,0 +1,46 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Наименование
+        span: auto
+        type: text
+        
+    slug:
+        label: URL
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+
+    preview_text:
+        label: Короткое описание
+        type: textarea
+        size: small
+
+    description:
+        label: Описание
+        type: textarea
+        size: small
+
+    cover:
+        label: Обложка
+        type: fileupload
+        mode: image
+        maxFiles: 1
+
+
+    icon_img:
+        label: Иконка (IMG)
+        type: fileupload
+        mode: image
+        maxFiles: 1
+
+    icon_svg:
+        label: Иконка (SVG)
+        type: textarea
+        size: tiny

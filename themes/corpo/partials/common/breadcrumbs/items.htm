@@ -1,0 +1,29 @@
+{# for obItem in pages %}
+<li itemprop="itemListElement" itemscope="" itemtype="http://schema.org/ListItem" class="inline-block transition-all
+{% if not last%}hover:text-black after:content-['\2014'] after:px-3 {% endif %}">
+    {% if last %}
+        <link href="{{ obItem.url }}" itemprop="item">
+        <span itemprop="name">{{ obItem.title }}</span>
+    {% else %}
+    <a href="{{ url }}" title="{{ title }}" itemprop="item">
+        <span itemprop="name">{{ title }}</span>
+    </a>
+    {% endif %}
+</li>
+{% endfor #}
+
+{% for obItem in arItems %}
+    <li class="inline-block transition-all {% if not loop.last %} hover:text-black after:content-['\2014'] after:px-3{% endif %}"
+    itemprop="itemListElement" itemscope itemtype="https://schema.org/ListItem">
+        {% if not loop.last %}
+            <a class="breadcrumbs__link" href="{{ obItem.url }}" itemprop="item">
+                <span class="breadcrumbs__name" itemprop="name">{{ obItem.title }}</span>
+            </a>
+            <meta itemprop="position" content="{{ loop.index }}">
+        {% else %}
+            <span class="breadcrumbs__name" itemprop="name">{{ obItem.title }}</span>
+            <meta itemprop="position" content="{{ loop.index }}">
+        {% endif %}
+    </li>
+    {% set index = loop.index + 1 %}
+{% endfor %}

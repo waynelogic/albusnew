@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Banner Category
+
+# Model Form Field configuration
+form: $/albus/corporate/models/bannercategory/fields.yaml
+
+# Model Class name
+modelClass: Albus\Corporate\Models\BannerCategory
+
+# Default redirect location
+defaultRedirect: albus/corporate/bannercategories
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/corporate/bannercategories/update/:id
+    redirectClose: albus/corporate/bannercategories
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/corporate/bannercategories
+    redirectClose: albus/corporate/bannercategories
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

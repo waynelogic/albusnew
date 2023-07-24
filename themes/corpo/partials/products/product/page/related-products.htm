@@ -1,0 +1,11 @@
+<h5 class="relative mb-8 border-b text-[#253D4E] font-bold border-[#ececec] pb-5 text-2xl after:content-[''] after:absolute after:w-20 after:h-[2px] after:bg-primary after:bottom-0 after:left-0">Похожие товары</h5>
+
+{% set idCategory = obProduct.category.id %}
+{% set obProductList = ProductList.make().sort(ProductList.getSorting()).active().category(idCategory) %}
+{% if obProductList.isNotEmpty() %}
+<div class="grid grid-cols-1 md:grid-cols-2 xl:grid-cols-4 gap-6">
+    {% for obProduct in obProductList | slice (0, 4) %}
+        {% partial 'products/product/list/item' obProduct=obProduct  index=loop.index %}
+    {% endfor %}
+</div>
+{% endif %}

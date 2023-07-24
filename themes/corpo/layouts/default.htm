@@ -1,15 +1,20 @@
 ==
 <!DOCTYPE html>
-<html lang="en">
+<html lang="{{ this.site.locale }}">
 <head>
     {% partial "common/meta" %}
 </head>
-<body>
-    {% partial "common/header/container" %}
-    <main>
-        {% page %}
-    </main>
-    {% partial "common/footer" %}
-    {% partial "common/scripts" %}
+<body class="bg-[#f2f3f7]">
+    {% apply spaceless %}
+        {% partial "common/header/container" %}
+        {% if this.page.id != 'home' %}
+            {% partial "common/breadcrumbs/container" %}
+        {% endif %}
+        <main>
+            {% page %}
+        </main>
+        {% partial "common/footer" %}
+        {% partial "common/scripts" %}
+    {% endapply %}
 </body>
 </html>

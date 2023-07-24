@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Employee
+
+# Model Form Field configuration
+form: $/albus/corporate/models/employee/fields.yaml
+
+# Model Class name
+modelClass: Albus\Corporate\Models\Employee
+
+# Default redirect location
+defaultRedirect: albus/corporate/employees
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/corporate/employees/update/:id
+    redirectClose: albus/corporate/employees
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/corporate/employees
+    redirectClose: albus/corporate/employees
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

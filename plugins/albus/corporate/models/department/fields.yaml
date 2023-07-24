@@ -1,0 +1,69 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    active:
+        label: Активность
+        default: true
+        type: switch
+        span: full
+    name:
+        label: Наименование
+        type: text
+        span: auto
+        required: true
+    slug:
+        label: URL
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+
+    preview_text:
+        label: Описание
+        type: textarea
+        size: small
+        span: full
+        
+    address:
+        label: Адрес
+        span: auto
+        type: text
+
+    coordinates:
+        label: Кординаты
+        span: auto
+        type: text
+
+
+    phone:
+        prompt: Добавить телефон
+        type: repeater
+        span: auto
+        form:
+            fields:
+                item:
+                    label: Телефон
+                    span: full
+
+    email:
+        prompt: Добавить почту
+        type: repeater
+        span: auto
+        form:
+            fields:
+                item:
+                    label: Почта
+                    span: full
+                    type: email
+
+    employees:
+        label: Сотрудники
+        type: relation
+
+    jobs:
+        label: Вакансии
+        type: relation

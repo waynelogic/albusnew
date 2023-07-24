@@ -1,0 +1,39 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    active:
+        label: Активность
+        type: switch
+    logo:
+        label: Логотип
+        type: image
+
+    name:
+        label: Наименование
+        type: text
+    slug:
+        label: URL
+        type: text
+
+    description:
+        label: Описание
+        type: summary
+
+    legal_name:
+        tab: Общая информация
+        label: Юр. наименование
+        type: text
+
+    type:
+        label: Вид контрагента
+        type: selectable
+        span: auto
+
+    relations:
+        label: Отношения
+        type: selectable
+    id:
+        label: ID
+        searchable: true

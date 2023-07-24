@@ -1,0 +1,40 @@
+<div class="tab-wrapper" x-data="{ activeTab:  0 }">
+    <div class="flex items-center">
+        <label @click="activeTab = 0" class="cursor-pointer mr-4 py-3 px-6 text-center font-bold text-base rounded-3xl border border-[#ececec] text-[#7E7E7E] transition-all duration-300 hover:text-primary hover:shadow-sm hover:-translate-y-1" :class="{ 'active': activeTab === 0 }">Описание</label>
+        <label @click="activeTab = 1" class="cursor-pointer mr-4 py-3 px-6 text-center font-bold text-base rounded-3xl border border-[#ececec] text-[#7E7E7E] transition-all duration-300 hover:text-primary hover:shadow-sm hover:-translate-y-1" :class="{ 'active': activeTab === 1 }">Свойства</label>
+    </div>
+
+    <div class="mt-8" :class="{ 'active': activeTab === 0 }" x-show.transition.in.opacity.duration.600="activeTab === 0">
+        <div class="prose max-w-none">
+            {{ obProduct.description | raw }}
+        </div>
+    </div>
+    <div class="mt-8" :class="{ 'active': activeTab === 1 }" x-show.transition.in.opacity.duration.600="activeTab === 1">
+        {% set obPropertyList = obProduct.property %}
+        <div class="relative overflow-x-auto">
+            <table class="table-auto w-full text-left border-collapse border border-slate-400 ">
+                <thead class="text-xs text-white uppercase bg-primary rounded-lg">
+                    <tr>
+                        <th scope="col" class="px-6 py-3 border border-slate-300">Название Свойства</th>
+                        <th scope="col" class="px-6 py-3 border border-slate-300">Значение</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    {% if obProduct.code %}
+                        {% partial 'products/product/page/property-table-item' key='Артикул' value=obProduct.code %}
+                    {% endif %}
+                    {% if obProduct.brand.name %}
+                        {% partial 'products/product/page/property-table-item' key='Производитель' value=obProduct.brand.name %}
+                    {% endif %}
+                    {% if obPropertyList.isNotEmpty == true %}
+                        {% for obProeprty in obPropertyList %}
+                            {% if obProeprty.hasValue() %}
+                                {% partial 'products/product/page/property-table-item' key=obProeprty.name value=obProeprty.property_value.getValueString() %}
+                            {% endif %}
+                        {% endfor %}
+                    {% endif %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>

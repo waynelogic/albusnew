@@ -1,12 +1,47 @@
 {
   "src/css/app.css": {
-    "file": "assets/app-add7fc75.css",
+    "file": "assets/app-d919d7f2.css",
     "isEntry": true,
     "src": "src/css/app.css"
   },
   "src/js/app.js": {
-    "file": "assets/main-4ed993c7.js",
+    "dynamicImports": [
+      "src/js/components/swiper-slider.js",
+      "src/js/components/modalAjax.js",
+      "src/js/components/modal.js",
+      "src/js/components/accordion.js",
+      "src/js/components/dropdown.js"
+    ],
+    "file": "assets/main-fff92bea.js",
     "isEntry": true,
     "src": "src/js/app.js"
+  },
+  "src/js/components/accordion.js": {
+    "file": "assets/accordion-46846500.js",
+    "isDynamicEntry": true,
+    "src": "src/js/components/accordion.js"
+  },
+  "src/js/components/dropdown.js": {
+    "file": "assets/dropdown-481624bc.js",
+    "isDynamicEntry": true,
+    "src": "src/js/components/dropdown.js"
+  },
+  "src/js/components/modal.js": {
+    "file": "assets/modal-e3171d8b.js",
+    "isDynamicEntry": true,
+    "src": "src/js/components/modal.js"
+  },
+  "src/js/components/modalAjax.js": {
+    "file": "assets/modalAjax-49f0ac30.js",
+    "imports": [
+      "src/js/components/modal.js"
+    ],
+    "isDynamicEntry": true,
+    "src": "src/js/components/modalAjax.js"
+  },
+  "src/js/components/swiper-slider.js": {
+    "file": "assets/swiper-slider-1113d18b.js",
+    "isDynamicEntry": true,
+    "src": "src/js/components/swiper-slider.js"
   }
 }

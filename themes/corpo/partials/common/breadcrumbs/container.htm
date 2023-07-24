@@ -1,0 +1,18 @@
+<section class="breadcrumbs">
+    <div class="container py-6">
+        <ol class="breadcrumb mb-2 text-[#bbb]" itemscope itemtype="https://schema.org/BreadcrumbList">
+            {% placeholder breadcrumbs default %}
+                {% set defBreadcrumbs = [
+                    { title: 'Главная', url: '/' },
+                    { title: this.page.title, url: this.page.url }
+                ] %}
+                {% partial 'common/breadcrumbs/items' arItems=defBreadcrumbs %}
+            {% endplaceholder %}
+        </ol>
+        {% if not hide_br_title %}
+        <div class="page-top-main">
+            <h1 class="text-5xl">{{ this.page.title }}</h1>
+        </div>
+        {% endif %}
+    </div>
+</section>

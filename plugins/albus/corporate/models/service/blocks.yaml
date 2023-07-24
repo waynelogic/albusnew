@@ -1,0 +1,64 @@
+textarea:
+    name: Область текста
+    description: Basic text field
+    icon: icon-file-text-o
+    fields:
+        text_area:
+            label: Текст
+            type: textarea
+            size: large
+
+accordion:
+    name: Аккордион
+    description: Раскрывающийся текст
+    icon: icon-caret-down
+    fields:
+        title:
+            label: Заголовок
+            type: text
+        text_area:
+            label: Текст
+            type: textarea
+            size: large
+
+quote:
+    name: Quote
+    description: Quote item
+    icon: icon-quote-right
+    fields:
+        quote_position:
+            span: auto
+            label: Quote Position
+            type: radio
+            options:
+                left: Left
+                center: Center
+                right: Right
+        quote_content:
+            span: auto
+            label: Details
+            type: textarea
+
+price_table:
+    name: Таблица цен
+    icon: icon-table
+    fields:
+        title:
+            label: Заголовок таблицы
+            type: text
+        table:
+            label: Таблица цен
+            type: datatable
+            adding: true
+            deleting: true
+            recordsPerPage: false
+            searching: false
+            columns:
+                title:
+                    type: string
+                    title: Название услуги
+                price:
+                    type: string
+                    title: Цена
+
+

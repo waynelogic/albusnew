@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Partner
+
+# Model Form Field configuration
+form: $/albus/corporate/models/partner/fields.yaml
+
+# Model Class name
+modelClass: Albus\Corporate\Models\Partner
+
+# Default redirect location
+defaultRedirect: albus/corporate/partners
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/corporate/partners/update/:id
+    redirectClose: albus/corporate/partners
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/corporate/partners
+    redirectClose: albus/corporate/partners
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

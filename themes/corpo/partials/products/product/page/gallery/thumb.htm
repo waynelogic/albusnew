@@ -1,0 +1,6 @@
+<div class="swiper-slide">
+    <picture>
+        <source srcset="{{ image | resize(150, 150, { mode: 'crop', extension: 'webp' }) }}" type="image/webp">
+        <img class="rounded-lg shadow-md overflow-hidden" title="{{ title }}" width="150px" height="150px" src="{{ image | resize(150, 150, { mode: 'crop', extension: 'jpg' }) }}" alt="{{ title }}">
+    </picture>
+</div>

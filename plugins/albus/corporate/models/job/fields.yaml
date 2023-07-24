@@ -1,0 +1,63 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    active:
+        label: Активность
+        default: true
+        type: switch
+        span: full
+    name:
+        label: Наименование
+        span: auto
+        type: text
+        placeholder: PHP-программист
+        
+    slug:
+        label: URL
+        span: auto
+        required: 1
+        preset:
+            field: name
+            type: slug
+        type: text
+
+tabs:
+    fields:
+        content:
+            tab: Описание
+            size: giant
+            span: adaptive
+            type: richeditor
+
+        salary:
+            tab: Общая информация
+            label: Зарплата
+            span: auto
+            type: text
+
+        experience:
+            tab: Общая информация
+            label: Опыт работы
+            span: auto
+            type: text
+
+        type:
+            tab: Общая информация
+            label: Тип работы
+            type: dropdown
+            span: auto
+
+        department:
+            tab: Общая информация
+            label: Отдел
+            type: relation
+            span: auto
+
+        preview_text:
+            tab: Общая информация
+            label: Короткое описание
+            size: tiny
+            span: full
+            type: textarea

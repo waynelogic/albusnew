@@ -1,0 +1,163 @@
+items:
+    -
+        title: Главная
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: index
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: Продукция
+                type: cms-page
+                code: ''
+                reference: catalog/index
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                    class2: ''
+            -
+                title: Контакты
+                type: cms-page
+                code: ''
+                reference: common/contacts
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                    class2: ''
+            -
+                title: Проекты
+                type: cms-page
+                code: ''
+                reference: projects/index
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                    class2: ''
+            -
+                title: Пресс-центр
+                type: cms-page
+                code: ''
+                reference: news/index
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+                    class2: ''
+    -
+        title: Услуги
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: services/index
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: mega
+            isExternal: '0'
+            class2: ''
+        items:
+            -
+                title: 'Категории услуг'
+                nesting: null
+                type: all-service-categories
+                url: null
+                code: ''
+                reference: null
+                cmsPage: services/category
+                replace: 1
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+    -
+        title: Компания
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: company/index
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+        items:
+            -
+                title: 'О компании'
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/index
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Команда
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/staff
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Карьера
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/vacancy
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Партнеры
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/partners
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+            -
+                title: Отзывы
+                nesting: null
+                type: cms-page
+                url: null
+                code: ''
+                reference: company/reviews
+                cmsPage: null
+                replace: null
+                viewBag:
+                    isHidden: '0'
+                    cssClass: ''
+                    isExternal: '0'
+name: Футер

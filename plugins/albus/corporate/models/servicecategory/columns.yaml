@@ -1,0 +1,27 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    active:
+        label: Активность
+        type: switch
+    cover:
+        label: Обложка
+        type: image
+        
+    name:
+        label: Наименование
+        type: text
+        
+    slug:
+        label: URL
+        type: text
+
+    preview_text:
+        label: Короткое описание
+        type: summary
+
+    id:
+        label: ID
+        searchable: true

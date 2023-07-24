@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Project
+
+# Model Form Field configuration
+form: $/albus/corporate/models/project/fields.yaml
+
+# Model Class name
+modelClass: Albus\Corporate\Models\Project
+
+# Default redirect location
+defaultRedirect: albus/corporate/projects
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/corporate/projects/update/:id
+    redirectClose: albus/corporate/projects
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/corporate/projects
+    redirectClose: albus/corporate/projects
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title
