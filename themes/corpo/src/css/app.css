@@ -57,4 +57,10 @@
     .accordion .accordion-collapse.open {
         @apply overflow-visible;
     }
+    .tab-pane {
+        @apply h-0 overflow-hidden;
+    }
+    .tab-pane.open {
+        @apply h-auto overflow-visible;
+    }
 }

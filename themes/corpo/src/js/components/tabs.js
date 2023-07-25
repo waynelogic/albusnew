@@ -1,26 +1,35 @@
-export default function initTabs($root) {
-    const $buttons = $root.querySelectorAll('.tab-button');
-    $buttons.forEach(button => {
-        button.onclick = (button) => { showtab(button.target) };
-    });
-    const $tabs = $root.querySelectorAll('.tab-content');
-
-    // let $hash = window.location.hash;
-    // if ($hash != undefined) {
-
-    // }
-    // console.log(window.location.hash);
-
-    function showtab($button) {
-        if ($button.dataset.tab != undefined) {
-            let $elToShow = $root.querySelector('#' + $button.dataset.tab);
-            hideAll();
-            $elToShow.classList.remove("hidden");
-            $button.classList.add("active")
+class TabManager {
+    constructor(element) {
+        this.element = element;
+        this.items = [];
+        this.init();
+    }
+    init() {
+        let buttons = this.element.querySelectorAll('[data-tab]');
+        buttons.forEach(button => {
+            let target = button.dataset.tab;
+            this.items[target] = {
+                button,
+                content: document.querySelector(target),
+                isOpen: this.isOpen(button)
+            }
+            button.addEventListener('click',() => this.openTab(target));
+        });
+    }
+    isOpen(button) {
+        return button.classList.contains('active') ? true : false;
+    }
+    openTab(target) {
+        let item = this.items[target];
+        if (item.isOpen) return;
+        for (const [itemTarget, item] of Object.entries(this.items)) {
+            item.button.classList.toggle('active', itemTarget === target);
+            item.content.classList.toggle('open', itemTarget === target);
+            item.isOpen = itemTarget === target;
         }
     }
-    function hideAll() {
-        $buttons.forEach(element => { element.classList.remove("active"); });
-        $tabs.forEach(element => { element.classList.add("hidden"); });
-    }
+}
+
+export default function init($tabarea) {
+    new TabManager($tabarea);
 }

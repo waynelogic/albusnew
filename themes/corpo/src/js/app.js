@@ -1,5 +1,5 @@
 window.slider = function(object){
-    import('./components/swiper-slider.js').then(({ default : initCarousel }) => initCarousel(object) );
+    import('./components/swiper-slider.js').then(({ default : init }) => init(object) );
 }
 
 window.ajaxModal = function(object){
@@ -12,6 +12,10 @@ window.modal = function(object){
 
 window.accordion = function(object){
     import('./components/accordion').then(({ default : init }) => init(object) );
+}
+
+window.tabs = function(object){
+    import('./components/tabs').then(({ default : init }) => init(object) );
 }
 
 window.onload = () => {
@@ -73,4 +77,3 @@ class TabManager {
         });
     }
 }
-
