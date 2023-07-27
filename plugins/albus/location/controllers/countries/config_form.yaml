@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: Country
+
+# Model Form Field configuration
+form: $/albus/location/models/country/fields.yaml
+
+# Model Class name
+modelClass: Albus\Location\Models\Country
+
+# Default redirect location
+defaultRedirect: albus/location/countries
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/location/countries/update/:id
+    redirectClose: albus/location/countries
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/location/countries
+    redirectClose: albus/location/countries
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

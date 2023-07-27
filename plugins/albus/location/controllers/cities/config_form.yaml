@@ -1,0 +1,31 @@
+# ===================================
+#  Form Behavior Config
+# ===================================
+
+# Record name
+name: City
+
+# Model Form Field configuration
+form: $/albus/location/models/city/fields.yaml
+
+# Model Class name
+modelClass: Albus\Location\Models\City
+
+# Default redirect location
+defaultRedirect: albus/location/cities
+
+# Create page
+create:
+    title: backend::lang.form.create_title
+    redirect: albus/location/cities/update/:id
+    redirectClose: albus/location/cities
+
+# Update page
+update:
+    title: backend::lang.form.update_title
+    redirect: albus/location/cities
+    redirectClose: albus/location/cities
+
+# Preview page
+preview:
+    title: backend::lang.form.preview_title

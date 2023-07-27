@@ -1,8 +1,8 @@
 {% set url = 'services/item' | page ({ category: obService.category.slug, slug: obService.slug }) %}
-<div class="border flex max-lg:flex-col p-10 transition-all hover:shadow-out">
+<div class="bg-white rounded-3xl shadow-round border flex max-lg:flex-col p-10 transition-all hover:shadow-md hover:-translate-y-0.5">
     {% if obService.cover %}
     <a href="{{ url }}" class="block max-lg:w-full max-lg:mb-6 lg:max-w-[250px] mr-10 shrink-0 self-start">
-        <img src="{{ obService.cover.path }}" alt="{{ obService.name }}" width="509" height="338" title="{{ obService.name }}" class="w-full">
+        <img src="{{ obService.cover.path }}" alt="{{ obService.name }}" width="509" height="338" title="{{ obService.name }}" class="rounded-xl w-full">
     </a>
     {% endif %}
     <div class="info">

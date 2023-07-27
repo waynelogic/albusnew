@@ -12,10 +12,10 @@ slug = "{{ :category }}"
 <section class="services-list">
     <div class="container">
         <div class="grid lg:grid-cols-12 gap-10">
-            <div class="lg:col-span-4">
+            <div class="lg:col-span-3">
                 {% partial 'services/aside' %}
             </div>
-            <div class="lg:col-span-8">
+            <div class="lg:col-span-9">
                 {% set arServices = ServiceList.get() %}    
                 <div class="grid">
                     {% for obService in arServices %}

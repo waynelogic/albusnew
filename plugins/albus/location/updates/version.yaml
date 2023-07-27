@@ -1,0 +1,5 @@
+v1.0.1: 
+    - First version of Location
+    - create_countries_table.php
+    - create_regions_table.php
+    - create_cities_table.php

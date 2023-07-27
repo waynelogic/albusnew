@@ -4,61 +4,28 @@ title = "Главная"
 
 [ServiceCategoryList]
 categoryPage = "services/category"
+
+[EmployeeList]
 ==
 {% partial "home/hero" %}
-
-
-
-<section class="services-section">
-    <div class="container pt-12">
-        <h2 class="text-4xl font-bold mb-6">Сервисы для бизнеса</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
-            {% for obService in ServiceCategoryList.get() %}
-            <a href="{{ obService.url }}" class="group rounded-3xl flex items-center py-8 shadow-round bg-white transition-all hover:-translate-y-0.5 hover:shadow-md">
-                <div class="px-5 py-3 mr-6 rounded-r-2xl text-gray-300 bg-[#36393c] transition-all group-hover:text-[#292c30] group-hover:bg-primary">
-                    {% partial 'ui/icon' icon=obService.icon_svg s=3 %}
-                </div>
-                <div class="mr-4">
-                    <h5 class="text-lg font-semibold mb-1">{{ obService.name }}</h5>
-                    <div class="mb-3">{{ obService.preview_text }}</div>
-                    <div href="blog-single.html" class="inline-flex px-1 py-0.5 text-primary transition-all group-hover:bg-primary group-hover:text-gray-700 group-hover:border-primary border rounded-tr-lg">
-                        {% partial 'ui/icon' icon='caret-right-bold' s=1 %}
-                    </div>
-                </div>
-            </a>
-            {% endfor %}
-        </div>
-    </div>
-</section>
-
-<section class="">
-    <div class="container text-white py-12">
-        <div class="shadow-round transition-all hover:-translate-y-0.5 hover:shadow-md flex justify-between items-center rounded-3xl bg-gradient-to-r from-primary via-[#ff9a00] to-[#ff7400]">
-            <img class="ml-10 w-40 py-6" src="{{ 'assets/images/index/laptop.png' | theme }}" alt="">
-            <div class="max-md:hidden mx-10">
-                <div class="text-5xl font-bold uppercase">Разработка сайта</div>
-            </div>
-            <div>
-                <div class="md:hidden text-lg font-bold uppercase">Разработка сайта</div>
-                <div class="mr-10">Подписка на&nbsp;50&nbsp;ГБ<br>интернета, кино,<br>музыку, кешбэк<br>и&nbsp;другие привилегии</div>
-            </div>
-        </div>
-    </div>
-</section>
-
+{% partial "home/services" %}
+{% partial "home/call-back" %}
 {% partial "home/packages" %}
 
 <section class="bg-[#1d2023]">
     <div class="container py-12">
-        <h2 class="text-4xl text-white uppercase flex items-center mb-10">
-            <span class="mr-2">Начни жизнь с чистого листа</span>
-            <span>{% partial 'ui/icon' icon='caret-right-bold' s=3 %} </span>
-        </h2>
-        <div class="grid grid-cols-2 gap-20">
+
+        <div class="grid lg:grid-cols-2 gap-20">
             <div>
+                <h2 class="text-4xl font-serif font-semibold text-white uppercase flex items-center mb-10">
+                    <span class="mr-2">Начни жизнь с чистого листа</span>
+                    <span>{% partial 'ui/icon' icon='caret-right-bold' s=3 %} </span>
+                </h2>
                 <img class="relative block w-full rounded-3xl shadow-[0_0_100px_0_#F8B326]" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/resource/image-1.jpg" alt="">
             </div>
             <div>
+                <p class="block text-white mb-6">Альбус — компания, анализирующая потребности и бизнес-процессы организаций. Работаем с 2018 года, занимаемся автоматизацией бизнеса, управлением активами и инвестиций, финансовым аудитом и оказываем услуги лизинга и юридической практики..</p>
+
                 {% set arPoints = [
                     {
                         title: 'Качественный веб-сайт - позволит привлечь новых клиентов.',
@@ -67,6 +34,10 @@ categoryPage = "services/category"
                     {
                         title: 'Правильно настроенная система учета - обеспечит надежную финансовую базу.',
                         icon: 'handshake'
+                    },
+                    {
+                        title: 'Эффективная работа менеджеров - профессионализм менеджеров сделает бизнес более успешным и устойчивым.',
+                        icon: 'user-circle'
                     },
                     {
                         title: 'Эффективная работа менеджеров - профессионализм менеджеров сделает бизнес более успешным и устойчивым.',
@@ -83,6 +54,48 @@ categoryPage = "services/category"
                     </li>
                     {% endfor %}
                 </ul>
+            </div>
+        </div>
+    </div>
+</section>
+
+{% set obEmployeeList = EmployeeList.get() %}
+<section class="employee-list">
+    <div class="container py-12">
+        <h2 class="text-4xl font-semibold font-serif mb-6">Наша команда</h2>
+        <div class="swiper py-4" data-lazy="slider" data-space-between="10" data-breakpoints='{"768": {"slidesPerView": 2, "spaceBetween": 20}, "1200": {"slidesPerView": 3, "spaceBetween": 30}}'>
+            <div class="swiper-wrapper">
+                {% for obEmployee in obEmployeeList %}
+                    <div class="swiper-slide">
+                        {% partial 'employee/list/item.htm' obEmployee=obEmployee %}
+                    </div>
+                {% endfor %}
+            </div>
+            <div class="swiper-pagination"></div>
+            <div class="flex items-center justify-center space-x-4 mt-5">
+                <button type="button" role="presentation" class="swiper-button-prev">
+                    {% partial 'ui/icon' icon='slider-arrow-left' s=1 %}
+                </button>
+                <button type="button" role="presentation" class="swiper-button-next">
+                    {% partial 'ui/icon' icon='slider-arrow-left' s=1 %}
+                </button>
+            </div> 
+        </div>
+    </div>
+</section>
+
+<section class="">
+    <div class="container text-white pb-12">
+        <div class="shadow-round transition-all hover:-translate-y-0.5 hover:shadow-md flex justify-between items-center rounded-3xl" style="background: linear-gradient(270deg, #F8B326 0%, #FFD598 16.91%, #FFAA7C 33.48%, #FF9B74 100%);">
+            <img class="ml-10 w-40 py-6" src="{{ 'assets/images/index/laptop.png' | theme }}" alt="">
+            <div class="max-md:hidden mx-10">
+                <!-- <div class="text-5xl font-bold font-serif uppercase mb-2">САЙТ ТУ САЙД ++</div> -->
+                <div class="text-5xl font-bold font-serif uppercase mb-2">SIDE TO SITE ++</div>
+                <p>Успей получить скидку на создание сайта до конца лета!</p>
+            </div>
+            <div>
+                <div class="md:hidden text-lg font-bold uppercase">Разработка сайта</div>
+                <div class="mr-10">Подписка на&nbsp;50&nbsp;ГБ<br>интернета, кино,<br>музыку, кешбэк<br>и&nbsp;другие привилегии</div>
             </div>
         </div>
     </div>

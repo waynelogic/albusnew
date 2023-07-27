@@ -1,0 +1,100 @@
+title = "Калькулятор"
+layout = "default"
+url = "/calk"
+==
+
+{% set arCalc = [
+    {
+        title: 'Дизайн',
+        slug: 'design',
+        arItems: [
+            {
+                type: 'radio',
+                options: [
+                    {
+                        title: 'Готовый шаблон',
+                        description: 'Ваш личный сайт, либо сайт вашего предприятия. Как правило содержит до 8 страниц и форму обратной связи. Функционал сайта можно расширить за счет модулей, добавив фотогалерею и другие.',
+                        price: 0,
+                    },
+                    {
+                        title: 'Индивидуальный дизайн',
+                        description: 'Информативный, развлекательный портал, интерактивный блог, либо форум. Этот тип сайта является очень функциональным и позволяет создавать действительно крупные проекты со специфическим функционалом.',
+                        price: 10000,
+                    },
+                ]
+            },
+        ]
+    }
+] %}
+
+
+{% set arModules = [
+    {
+        title: 'Новостной Блог',
+        price: 5500,
+        icon: 'newspaper',
+        description: 'Вы можете наполнить сайт статьями, либо вести свой блог. Вам будет доступен визуальный редактор публикаций, и система тегов.',
+    },
+    {
+        title: 'Слайдер на главной странице',
+        price: 2700,
+        icon: 'chart-bar',
+        description: 'Слайдер - это блок с баннерами, которые циклически сменяют друг друга. Как правило размещен в верхней части сайта.',
+    },
+    
+] %}
+
+<section class="py-12">
+    <div class="container" data-lazy="calc" data-calc-baseprice="20000">
+        <section class="mb-6 ">
+            <h3 class="text-3xl font-serif font-semibold mb-6">Дизайн</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                <label class="flex flex-col items-center bg-white shadow-round rounded-3xl p-6">
+                    <img src="{{ 'assets/images/calc/own-design.svg' | theme }}" width="50%" alt="">
+                    <div class="inline-flex items-center mt-5">
+                        <input class="w-6 h-6 calc-item mr-2" type="radio" name="design" value="0" checked>
+                        <span class="lg:text-2xl font-serif font-medium uppercase ml-2">Готовый шаблон</span>
+                    </div>
+                </label>
+                <label class="flex flex-col items-center bg-white shadow-round rounded-3xl p-6">
+                    <img src="{{ 'assets/images/calc/own-design.svg' | theme }}" width="50%" alt="">
+                    <div class="inline-flex items-center mt-5">
+                        <input class="w-6 h-6 calc-item mr-2" type="radio" name="design" value="10000">
+                        <span class="lg:text-2xl font-serif font-medium uppercase ml-2">Индивидуальный дизайн</span>
+                    </div>
+                </label>
+            </div>
+        </section>
+        <section class="mb-6">
+            <h3 class="text-3xl font-serif font-semibold mb-6">Модули</h3>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
+                {% for obItem in arModules %}
+                    <div class="bg-white shadow-round rounded-3xl p-6 transition-all hover:rounded-xl hover:shadow-md">
+                        <div class="flex items-center mb-3">
+                            <span class="bg-[#f2f3f7] rounded-full p-2 self-start mr-4">
+                                {% partial 'ui/icon' icon=obItem.icon s=2 %}
+                            </span>
+                            <h4 class="text-base font-semibold font-serif">{{ obItem.title }}</h4>
+                        </div>
+                        <p class="text-sm">{{ obItem.description }} </p>
+                        <div class="flex items-center justify-between mt-4">
+                            <div class="flex items-center font-medium">
+                                {% partial 'ui/icon' icon='tag' s=1 %}
+                                <span class="ml-2">{{ obItem.price }} руб.</span>
+                            </div>
+                            <label class="relative inline-flex items-center cursor-pointer">
+                                <input type="checkbox" value="{{ obItem.price }}" class="sr-only peer calc-item">
+                                <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
+                            </label>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div> 
+        </section>
+
+
+        <div class="bg-[#333] text-white text-3xl p-10 rounded-3xl mt-20">
+            Стоимость заказа: <span class="total-price font-serif font-semibold">0</span> руб.
+        </div>
+    </div>
+</section>

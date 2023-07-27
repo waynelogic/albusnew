@@ -1,0 +1,28 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Название
+        type: text
+        searchable: true
+    code:
+        label: Code
+        type: text
+        searchable: true
+
+    iso:
+        label: Code
+        type: text
+        searchable: true
+
+
+    country:
+        label: Страна
+        relation: country
+        select: name
+
+    id:
+        label: ID
+        searchable: true

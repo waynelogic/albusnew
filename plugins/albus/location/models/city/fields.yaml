@@ -1,0 +1,40 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    name:
+        label: Name
+        type: text
+        span: auto
+
+    region:
+        label: Область
+        type: relation
+        span: auto
+
+    country:
+        label: Страна
+        type: relation
+        span: auto
+    active:
+        label: Active
+        type: switch
+        default: true
+        span: auto
+    latitude:
+        label: Latitude
+        type: text
+        span: auto
+    longitude:
+        label: Longitude
+        type: text
+        span: auto
+    timezone:
+        label: Timezone
+        type: text
+        span: auto
+    iso:
+        label: ISO Code
+        type: text
+        span: auto

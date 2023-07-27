@@ -1,14 +1,6 @@
 [ServiceCategoryList ServiceAside]
 slug = "{{ :category }}"
 ==
-{#<ul class="border border-[#eff1f5] flex flex-col mb-6">
-    {% for obItem in ServiceAside.get() %}
-    <li>
-        <a href="{{ 'services/category' | page ({ category: obItem.slug }) }}" class="border-b block text-[#333] py-5 px-6 {{ this.param.category == obItem.slug ? 'bg-[#f8f9fb] font-bold' }} hover:text-primary">{{ obItem.name }}</a>
-    </li>
-    {% endfor %}
-</ul>
-#}
 {# partial 'common/aside-buttons' #}
 
 
@@ -30,9 +22,9 @@ slug = "{{ :category }}"
     </li> -->
     {% for obItem in ServiceAside.get() %}
     <li>
-        <a href="#" class="border flex flex-row items-center h-14 px-4 rounded-lg hover:bg-gray-100">
+        <a href="#" class="border flex flex-row items-center h-14 px-4 rounded-lg bg-white hover:bg-gray-100">
             <span class="flex items-center justify-center text-lg text-primary">
-                {% partial 'icon' icon=obItem.icon_svg s=3 %}
+                {% partial 'ui/icon' icon=obItem.icon_svg s=3 %}
             </span>
             <span class="ml-3">{{ obItem.name }}</span>
         </a>

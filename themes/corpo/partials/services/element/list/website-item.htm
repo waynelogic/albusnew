@@ -1,0 +1,32 @@
+<div class="relative flex flex-col bg-white p-6 rounded-3xl shadow-round transition-all hover:shadow-md hover:-translate-y-0.5">
+    <h4 class="text-xl font-semibold mb-3">{{ obItem.name }}</h4>
+    <div class="text-4xl font-bold mb-4"><span class="text-gray-500 text-xl">от </span><span class="font-serif">{{ obPackage.price | number_format (0, ',', ' ') }} ₽</span></div>
+    <div class="flex flex-col space-y-2 mb-6">
+        <div class="flex items-center">
+            <span class="bg-[#f2f3f7] rounded-full p-3">
+                {% partial 'ui/icon' icon='house' s=2 %}
+            </span>
+            <span class="text-xl font-semibold ml-4">
+                {{ obItem.suitable_for }}
+            </span>
+        </div>
+        <div class="flex items-center">
+            <span class="bg-[#f2f3f7] rounded-full p-3">
+                {% partial 'ui/icon' icon='clock' s=2 %}
+            </span>
+            <span class="text-xl font-semibold ml-4">
+                {{ obItem.time }}
+            </span>
+        </div>
+    </div>
+    
+    {#<ul class="pl-6 list-disc space-y-3 text-start my-4">
+        {% for obService in obPackage.services %}
+        <li class="font-semibold text-lg">
+            <span class="text-sm">{{ obService }}</span>
+        </li>
+        {% endfor %}
+    </ul>
+    #}
+    <a class="btn text-white bg-[#2b2a34] transition-all hover:bg-primary hover:text-[#222] py-3 w-full mt-auto" href="https://muffle.droitlab.com/contact/">Выбрать</a>        
+</div>

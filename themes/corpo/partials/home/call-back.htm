@@ -1,0 +1,23 @@
+<section class="call-back" style="background: linear-gradient(90deg, #F8B326 0%, #FFD598 16.91%, #FFAA7C 33.48%, #FF9B74 100%);">
+    <div class="container flex  max-lg:flex-wrap items-center justify-between">
+        <div class="max-lg:hidden">
+            <img class="h-full w-72 object-contain" src="{{ 'assets/images/home/call_back.png' | theme }}" alt="">
+        </div>
+        <div class="w-2/5 text-white">
+            <h2 class="text-2xl text-[clamp(1.2rem,3vw,2.5rem)] font-serif font-medium uppercase mb-2">Есть вопросы? Мы всегда готовы вам помочь!</h2>
+            <p>Вы можете оставить свой номер телефона и мы вам перезвоним. Или же просто наберите нас и мы все обсудим.</p>
+        </div>
+        <div>
+            <form action="" method="post">
+                <div class="text-2xl text-white font-serif font-medium mb-3">Напишите ваш номер</div>
+                <div class="relative flex mb-4">
+                    <div class="text-black absolute inset-y-0 w-10 z-10 pl-1 text-center pointer-events-none flex items-center justify-center">
+                        {% partial 'ui/icon' icon='microphone'  s=1 %}
+                    </div>
+                    <input type="tel" required name="phone" class="pl-10 w-full form-control" placeholder="+7 989 555 33 22">
+                </div>
+                <button class="btn text-white bg-[#2b2a34] transition-all hover:bg-primary hover:text-[#222] py-3 w-full mt-auto" href="https://muffle.droitlab.com/contact/">Отправить</button>        
+            </form>
+        </div>
+    </div>
+</section>

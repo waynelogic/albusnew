@@ -1,0 +1,167 @@
+@font-face {
+    font-family: "MTSsans";
+    src: url("MTSSans-Regular__W.woff2") format('woff2'), url("MTSSans-Regular__W.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSsans";
+    src: url("MTSSans-Medium__W.woff2") format('woff2'), url("MTSSans-Medium__W.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSsans";
+    src: url("MTSSans-Bold__W.woff2") format('woff2'), url("MTSSans-Bold__W.ttf") format('truetype');
+    font-weight: 600;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSsans";
+    src: url("MTSSans-Black__W.woff2") format('woff2'), url("MTSSans-Black__W.ttf") format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSsans";
+    src: url("MTSSans-UltraWide__W.woff2") format('woff2'), url("MTSSans-UltraWide__W.ttf") format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSExtended";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSExtended/MTSExtended-Medium.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSExtended/MTSExtended-Medium.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSsansUltraWide";
+    src: url("MTSSans-UltraWide__W.woff2") format('woff2'), url("MTSSans-UltraWide__W.ttf") format('truetype');
+    font-weight: 800;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSExtended";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSExtended/MTSExtended-Regular.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSExtended/MTSExtended-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSExtended";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSExtended/MTSExtended-Bold.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSExtended/MTSExtended-Bold.ttf") format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSExtended";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSExtended/MTSExtended-Black.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSExtended/MTSExtended-Black.ttf") format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSCompact";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSCompact/MTSCompact-Regular.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSCompact/MTSCompact-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSCompact";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSCompact/MTSCompact-Medium.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSCompact/MTSCompact-Medium.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSCompact";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSCompact/MTSCompact-Bold.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSCompact/MTSCompact-Bold.ttf") format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSCompact";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSCompact/MTSCompact-Black.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSCompact/MTSCompact-Black.ttf") format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSWide";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Light.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Light.ttf") format('truetype');
+    font-weight: 300;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSWide";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Regular.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSWide";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Medium.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Medium.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSWide";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Bold.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Bold.ttf") format('truetype');
+    font-weight: 700;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSWide";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Black.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSWide/MTSWide-Black.ttf") format('truetype');
+    font-weight: 900;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSText";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSText/MTSText-Regular.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSText/MTSText-Regular.ttf") format('truetype');
+    font-weight: 400;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: "MTSText";
+    src: url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSText/MTSText-Medium.woff2") format('woff2'), url("https://static.mts.ru/mts_rf/static/5698/Styles/Promo/fonts/MTSText/MTSText-Medium.ttf") format('truetype');
+    font-weight: 500;
+    font-style: normal;
+    font-display: swap;
+}

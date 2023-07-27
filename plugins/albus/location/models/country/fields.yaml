@@ -1,0 +1,29 @@
+# ===================================
+#  Form Field Definitions
+# ===================================
+
+fields:
+    is_enabled:
+        label: Is Enabled
+        type: switch
+        default: false
+        span: auto
+    name:
+        label: Name
+        type: text
+        index: true
+        span: auto
+    code:
+        label: Code
+        type: text
+        span: auto
+    geonames_id:
+        label: Geonames ID
+        type: number
+        nullable: true
+        span: auto
+    currency:
+        label: Currency
+        type: text
+        nullable: true
+        span: auto

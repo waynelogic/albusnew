@@ -1,0 +1,33 @@
+<div class="bg-white transition border border-offgreen-medium rounded-xl hover:border-black hover:shadow-lg hover:shadow-offgreen-dark/20 p-5 md:p-8">
+    <div class="grid gap-3 h-full">
+        <div class="flex justify-between items-start min-w-0">
+            <div class="flex items-center gap-6 min-w-0 ">
+                <div class="border-2 border-[#333] rounded-3xl overflow-hidden">
+                    {% if obEmployee.avatar %}
+                    <img alt="avatar" src="{{ obEmployee.avatar.path }}" width="150" height="150" decoding="async" data-nimg="1" class="flex-shrink-0" loading="lazy">
+                    {% else %}
+                    <img src="{{ 'assets/images/employees/avatar-empty.svg' | theme }}" width="150" height="150"  alt="{{ obEmployee.fullname }}">
+                    {% endif %}
+                </div>
+                <div class="min-w-0">
+                    <h2 class="m-0 text-xl whitespace-nowrap overflow-hidden text-ellipsis mr-5">{{ obEmployee.fullname }}</h2><span class="text-gray-400">{{ obEmployee.post }}</span>
+                </div>
+            </div>
+        </div>
+        <div class="middle-props">
+            <div class="flex items-center">
+                <div class="prop mr-5">
+                    <div class="text-[#999] text-sm uppercase">E-mail</div>
+                    <div class="value font_sm"><a class="dark-color" href="mailto:{{ obEmployee.email }}" target="_blank" rel="nofollow">{{ obEmployee.email }}</a></div>
+                </div>
+                <div class="prop">
+                    <div class="text-[#999] text-sm uppercase">Телефон</div>
+                    <div class="value font_sm">{{ obEmployee.phone }}</div>
+                </div>
+            </div>
+        </div>
+        <div>
+            <p class="sm:text-sm text-gray-500 line-clamp-3">{{ obEmployee.preview_text }}</p>
+        </div>
+    </div>
+</div>

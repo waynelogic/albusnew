@@ -1,6 +1,6 @@
 {
   "src/css/app.css": {
-    "file": "assets/app-d919d7f2.css",
+    "file": "assets/app-e1c30478.css",
     "isEntry": true,
     "src": "src/css/app.css"
   },
@@ -10,9 +10,11 @@
       "src/js/components/modalAjax.js",
       "src/js/components/modal.js",
       "src/js/components/accordion.js",
+      "src/js/components/tabs.js",
+      "src/js/components/calc.js",
       "src/js/components/dropdown.js"
     ],
-    "file": "assets/main-fff92bea.js",
+    "file": "assets/main-c85a19f5.js",
     "isEntry": true,
     "src": "src/js/app.js"
   },
@@ -20,6 +22,11 @@
     "file": "assets/accordion-46846500.js",
     "isDynamicEntry": true,
     "src": "src/js/components/accordion.js"
+  },
+  "src/js/components/calc.js": {
+    "file": "assets/calc-e8119851.js",
+    "isDynamicEntry": true,
+    "src": "src/js/components/calc.js"
   },
   "src/js/components/dropdown.js": {
     "file": "assets/dropdown-481624bc.js",
@@ -40,8 +47,13 @@
     "src": "src/js/components/modalAjax.js"
   },
   "src/js/components/swiper-slider.js": {
-    "file": "assets/swiper-slider-1113d18b.js",
+    "file": "assets/swiper-slider-3b223bd7.js",
     "isDynamicEntry": true,
     "src": "src/js/components/swiper-slider.js"
+  },
+  "src/js/components/tabs.js": {
+    "file": "assets/tabs-86b824e8.js",
+    "isDynamicEntry": true,
+    "src": "src/js/components/tabs.js"
   }
 }

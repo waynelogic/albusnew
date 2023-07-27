@@ -18,6 +18,10 @@ window.tabs = function(object){
     import('./components/tabs').then(({ default : init }) => init(object) );
 }
 
+window.calc = function(object){
+    import('./components/calc').then(({ default : init }) => init(object) );
+}
+
 window.onload = () => {
     // import('./components/header').then(({ default : initHeader }) => initHeader() );
     import('./components/dropdown').then(({ default : initDropdown }) => initDropdown());
@@ -31,7 +35,7 @@ window.onload = () => {
         if (window[fnName] == undefined || typeof window[fnName] != 'function') return console.log(`Lazy функция ${fnName} не найдена`);
         const options = {
             root: null,
-            rootMargin: '0px',
+            rootMargin: '50px',
             threshold: 0.5
         }
         const server = new IntersectionObserver(handlerObserver, options);

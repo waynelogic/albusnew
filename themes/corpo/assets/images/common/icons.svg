@@ -1,10 +1,18 @@
 <svg>
+	<!-- Arrows -->
+	<symbol id="slider-arrow-left" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 11 17" fill="none">
+		<path fill-rule="evenodd" clip-rule="evenodd" d="M6.05383 8.5L9.15033 11.634C9.90444 12.3972 9.92193 13.6196 9.18996 14.4041L8.23806 15.4243C7.44446 16.2749 6.09517 16.2712 5.30613 15.4164L0.792361 10.5265C-0.264095 9.38204 -0.264094 7.61796 0.792361 6.47347L5.4832 1.39172C6.20374 0.611143 7.4088 0.53005 8.22742 1.20705L9.31513 2.1066C10.2204 2.85526 10.2885 4.21922 9.46237 5.05436L6.05383 8.5Z" fill="#3E3E3E"/>
+	</symbol>
+	<symbol id="arrow-right-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
+		<line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+		<polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polyline>
+	</symbol>
+	<symbol id="arrow-right-bold"  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
+		<path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path>
+	</symbol>
 	<symbol id="calculator" viewBox="0 0 256 256" fill="currentColor" xmlns="http://www.w3.org/2000/svg">
-		<rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></rect>
-		<rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)"
-			fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-			stroke-width="16"></rect>
+		<rect x="80" y="64" width="96" height="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></rect>
+		<rect x="32" y="48" width="192" height="160" rx="8" transform="translate(256) rotate(90)" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></rect>
 		<circle cx="88" cy="148" r="12"></circle>
 		<circle cx="128" cy="148" r="12"></circle>
 		<circle cx="168" cy="148" r="12"></circle>
@@ -12,22 +20,9 @@
 		<circle cx="128" cy="188" r="12"></circle>
 		<circle cx="168" cy="188" r="12"></circle>
 	</symbol>
-	<symbol id="arrow-right-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<line x1="40" y1="128" x2="216" y2="128" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
-		<polyline points="144 56 216 128 144 200" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></polyline>
-	</symbol>
-	<symbol id="arrow-right-bold"  xmlns="http://www.w3.org/2000/svg" fill="currentColor" viewBox="0 0 256 256">
-		<path d="M224.49,136.49l-72,72a12,12,0,0,1-17-17L187,140H40a12,12,0,0,1,0-24H187L135.51,64.48a12,12,0,0,1,17-17l72,72A12,12,0,0,1,224.49,136.49Z"></path>
-	</symbol>
 	<symbol id="paper-plane-tilt" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<path
-			d="M210.3,35.9,23.9,88.4a8,8,0,0,0-1.2,15l85.6,40.5a7.8,7.8,0,0,1,3.8,3.8l40.5,85.6a8,8,0,0,0,15-1.2L220.1,45.7A7.9,7.9,0,0,0,210.3,35.9Z"
-			fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-			stroke-width="16"></path>
-		<line x1="110.9" y1="145.1" x2="156.1" y2="99.9" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+		<path d="M210.3,35.9,23.9,88.4a8,8,0,0,0-1.2,15l85.6,40.5a7.8,7.8,0,0,1,3.8,3.8l40.5,85.6a8,8,0,0,0,15-1.2L220.1,45.7A7.9,7.9,0,0,0,210.3,35.9Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+		<line x1="110.9" y1="145.1" x2="156.1" y2="99.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
 	</symbol>
 	<symbol id="thumbs-up-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<rect width="256" height="256" fill="none"></rect>
@@ -166,67 +161,36 @@
 			stroke-width="12"></path>
 	</symbol>
 	<symbol id="cpu-light" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<rect x="100" y="100" width="56" height="56" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></rect>
-		<rect x="48" y="48" width="160" height="160" rx="8" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></rect>
-		<line x1="208" y1="104" x2="232" y2="104" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
-		<line x1="208" y1="152" x2="232" y2="152" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
-		<line x1="24" y1="104" x2="48" y2="104" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
-		<line x1="24" y1="152" x2="48" y2="152" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
-		<line x1="152" y1="208" x2="152" y2="232" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
-		<line x1="104" y1="208" x2="104" y2="232" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
-		<line x1="152" y1="24" x2="152" y2="48" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
-		<line x1="104" y1="24" x2="104" y2="48" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+		<rect x="100" y="100" width="56" height="56" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></rect>
+		<rect x="48" y="48" width="160" height="160" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></rect>
+		<line x1="208" y1="104" x2="232" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+		<line x1="208" y1="152" x2="232" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+		<line x1="24" y1="104" x2="48" y2="104" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+		<line x1="24" y1="152" x2="48" y2="152" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+		<line x1="152" y1="208" x2="152" y2="232" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+		<line x1="104" y1="208" x2="104" y2="232" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+		<line x1="152" y1="24" x2="152" y2="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
+		<line x1="104" y1="24" x2="104" y2="48" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="12"></line>
 	</symbol>
 	<symbol id="google-chrome-logo" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round"
-			stroke-linejoin="round" stroke-width="16"></circle>
-		<circle cx="128" cy="128" r="36" fill="none" stroke="currentColor" stroke-linecap="round"
-			stroke-linejoin="round" stroke-width="16"></circle>
-		<line x1="128" y1="92" x2="217" y2="92" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
-		<line x1="96.8" y1="146" x2="52.3" y2="68.9" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
-		<line x1="159.2" y1="146" x2="114.7" y2="223.1" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+		<circle cx="128" cy="128" r="96" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+		<circle cx="128" cy="128" r="36" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></circle>
+		<line x1="128" y1="92" x2="217" y2="92" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+		<line x1="96.8" y1="146" x2="52.3" y2="68.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+		<line x1="159.2" y1="146" x2="114.7" y2="223.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
 	</symbol>
 	<symbol id="browsers" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<rect x="32" y="80" width="160" height="128" rx="8" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></rect>
-		<path d="M64,80V56a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V168a8,8,0,0,1-8,8H192" fill="none"
-			stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
-		<line x1="32" y1="112" x2="192" y2="112" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
+		<rect x="32" y="80" width="160" height="128" rx="8" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></rect>
+		<path d="M64,80V56a8,8,0,0,1,8-8H216a8,8,0,0,1,8,8V168a8,8,0,0,1-8,8H192" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+		<line x1="32" y1="112" x2="192" y2="112" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></line>
 	</symbol>
 	<symbol id="handshake" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<path
-			d="M240.7,121.8,216,134.1,184,72.9l25-12.5a7.9,7.9,0,0,1,10.6,3.4l24.6,47.1A8,8,0,0,1,240.7,121.8Z"
-			fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-			stroke-width="16"></path>
-		<path d="M40,133.1,15.3,120.7a7.9,7.9,0,0,1-3.5-10.8L36.4,62.8A8,8,0,0,1,47,59.3L72,71.8Z"
-			fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-			stroke-width="16"></path>
-		<path
-			d="M216,134.1l-16,18.8-36.8,36.8a8.5,8.5,0,0,1-7.6,2.1l-58-14.5a8,8,0,0,1-2.9-1.5L40,133.1"
-			fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-			stroke-width="16"></path>
-		<path
-			d="M200,152.9l-44-32-12.8,9.6a32.1,32.1,0,0,1-38.4,0l-5.4-4.1a8.1,8.1,0,0,1-.9-12.1l39.2-39.1a7.9,7.9,0,0,1,5.6-2.3H184"
-			fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-			stroke-width="16"></path>
-		<path d="M72.6,71.8l51.3-15a8,8,0,0,1,5.5.4L164,72.9" fill="none" stroke="currentColor"
-			stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
-		<path d="M112,212.9l-30.1-7.6a7.4,7.4,0,0,1-3.3-1.7L56,184" fill="none"
-			stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+		<path d="M240.7,121.8,216,134.1,184,72.9l25-12.5a7.9,7.9,0,0,1,10.6,3.4l24.6,47.1A8,8,0,0,1,240.7,121.8Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+		<path d="M40,133.1,15.3,120.7a7.9,7.9,0,0,1-3.5-10.8L36.4,62.8A8,8,0,0,1,47,59.3L72,71.8Z" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+		<path d="M216,134.1l-16,18.8-36.8,36.8a8.5,8.5,0,0,1-7.6,2.1l-58-14.5a8,8,0,0,1-2.9-1.5L40,133.1" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+		<path d="M200,152.9l-44-32-12.8,9.6a32.1,32.1,0,0,1-38.4,0l-5.4-4.1a8.1,8.1,0,0,1-.9-12.1l39.2-39.1a7.9,7.9,0,0,1,5.6-2.3H184" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+		<path d="M72.6,71.8l51.3-15a8,8,0,0,1,5.5.4L164,72.9" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
+		<path d="M112,212.9l-30.1-7.6a7.4,7.4,0,0,1-3.3-1.7L56,184" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="16"></path>
 	</symbol>
 	<symbol id="tag" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<path
@@ -371,12 +335,6 @@
 		<circle cx="128" cy="128" r="12"></circle>
 		<circle cx="80" cy="128" r="12"></circle>
 		<circle cx="176" cy="128" r="12"></circle>
-	</symbol>
-	<symbol id="house" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
-		<path
-			d="M152,208V160a8,8,0,0,0-8-8H112a8,8,0,0,0-8,8v48a8,8,0,0,1-8,8H48a8,8,0,0,1-8-8V115.5a8.3,8.3,0,0,1,2.6-5.9l80-72.7a8,8,0,0,1,10.8,0l80,72.7a8.3,8.3,0,0,1,2.6,5.9V208a8,8,0,0,1-8,8H160A8,8,0,0,1,152,208Z"
-			fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"
-			stroke-width="16"></path>
 	</symbol>
 	<symbol id="house" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 256 256">
 		<path

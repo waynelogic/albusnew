@@ -1,18 +1,26 @@
 import Swiper, { Navigation, Pagination, Autoplay } from 'swiper';
 
 export default function init($element) {
+    const progressCircle = $element.querySelector(".autoplay-progress .autoplay-circle");
+    const progressContent = $element.querySelector(".autoplay-progress span");
     const pagination = $element.querySelector('.swiper-pagination');
-    const nextEl = $element.querySelector('.swiper-button-next');
-    const prevEl = $element.querySelector('.swiper-button-prev');
+    const nextButton = $element.querySelector('.swiper-button-next');
+    const prevButton = $element.querySelector('.swiper-button-prev');
     let defOptions = {
+        modules: [Navigation, Pagination, Autoplay],
         slidesPerView: 1,
-        spaceBetween: 10,
         pagination: {
             el: pagination,
         },
         navigation: {
-            nextEl: '.swiper-button-next',
-            prevEl: '.swiper-button-prev',
+            nextEl: nextButton,
+            prevEl: prevButton,
+        },
+        on: {
+            autoplayTimeLeft(s, time, progress) {
+                progressCircle.style.setProperty("--progress", 1 - progress);
+                // progressContent.textContent = `${Math.ceil(time / 1000)}s`;
+            }
         }
     }
     let data = $element.dataset;
@@ -24,6 +32,11 @@ export default function init($element) {
             $element.querySelectorAll('[data-slide-to]').forEach(element => {
                 element.onclick = () => console.log(this);
             });;
+        } else if (key == 'autoplay') {
+            result['autoplay'] = {
+                delay: 5000,
+                disableOnInteraction: false
+            }
         } else {
             result[key] = data[key];
         }

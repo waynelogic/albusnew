@@ -44,9 +44,13 @@ items:
                     class2: ''
     -
         title: Продукция
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: products/list
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''
@@ -55,8 +59,11 @@ items:
         items:
             -
                 title: Категории
+                nesting: null
                 type: all-shop-categories
+                url: null
                 code: ''
+                reference: null
                 cmsPage: products/index
                 replace: 1
                 viewBag:
@@ -145,15 +152,12 @@ items:
                     isExternal: '0'
     -
         title: Контакты
-        nesting: null
         type: cms-page
-        url: null
         code: ''
-        reference: common/contacts
-        cmsPage: null
-        replace: null
+        reference: contacts
         viewBag:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+            class2: ''
 name: 'Главное меню'

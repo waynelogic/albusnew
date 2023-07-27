@@ -1,0 +1,26 @@
+# ===================================
+#  List Column Definitions
+# ===================================
+
+columns:
+    name:
+        label: Название
+        type: text
+        searchable: true
+
+
+    iso:
+        label: Code
+        type: text
+        searchable: true
+
+
+    country:
+        label: Страна
+        relation: country
+        select: name
+
+    region:
+        label: Область
+        relation: region
+        select: name

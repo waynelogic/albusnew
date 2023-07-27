@@ -13,9 +13,7 @@ module.exports = {
       },
       fontFamily: {
         'sans': ['Mont'],
-        'serif': ['Comfortaa'],
-        // 'serif': ['Playfair Display'],
-        // 'serif': ['Ysabeau Office'],
+        'serif': ['MTSsans'],
       },
       brightness: {
         25: '.25',
