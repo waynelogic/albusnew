@@ -44,15 +44,11 @@ items:
                     class2: ''
     -
         title: Продукция
-        nesting: null
         type: cms-page
-        url: null
         code: ''
         reference: products/list
-        cmsPage: null
-        replace: null
         viewBag:
-            isHidden: '0'
+            isHidden: '1'
             cssClass: ''
             isExternal: '0'
             class2: ''
@@ -84,6 +80,7 @@ items:
             isHidden: '0'
             cssClass: ''
             isExternal: '0'
+            class2: ''
         items:
             -
                 title: 'О компании'
@@ -152,9 +149,13 @@ items:
                     isExternal: '0'
     -
         title: Контакты
+        nesting: null
         type: cms-page
+        url: null
         code: ''
         reference: contacts
+        cmsPage: null
+        replace: null
         viewBag:
             isHidden: '0'
             cssClass: ''

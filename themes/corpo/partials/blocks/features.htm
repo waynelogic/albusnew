@@ -1,0 +1,14 @@
+<h2 class="text-3xl font-semibold mb-4">{{ obBlock.section_title }}</h2>
+<div class="grid grid-cols-3 gap-6">
+    {% for obFeature in obBlock.features %}
+    <div class="bg-white border-2 rounded-3xl p-6 transition-all hover:rounded-xl hover:shadow-md">
+        <div class="flex items-center mb-3">
+            <span class="bg-[#f2f3f7] rounded-full p-2 self-start mr-4">
+                {% partial 'ui/icon' icon=obFeature.icon s=2 %}
+            </span>
+            <h4 class="text-base font-semibold font-serif">{{ obFeature.title }}</h4>
+        </div>
+        <p class="text-sm">Текст </p>
+    </div>
+    {% endfor %}
+</div>

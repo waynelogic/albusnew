@@ -20,6 +20,7 @@ return new class extends Migration
             $table->id();
             $table->timestamps();
             $table->boolean('is_enabled')->default(false);
+            $table->integer('active')->default(false);
             $table->string('name')->index();
             $table->string('code');
             $table->integer('geonames_id')->nullable();

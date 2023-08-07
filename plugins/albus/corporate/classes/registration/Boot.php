@@ -1,7 +1,12 @@
 <?php namespace Albus\Corporate\Classes\Registration;
 
 use Event;
+use Yaml;
+use Cms\Classes\Theme;
+use Cms\Classes\Controller;
 use Albus\Corporate\Models\ServiceCategory;
+use Albus\Corporate\Models\Service;
+use Albus\Corporate\Controllers\Services;
 use RainLab\Pages\Classes\MenuItemReference;
 
 trait Boot {
@@ -35,6 +40,36 @@ trait Boot {
         //     // });
         // });
 
+        // Services::extend(function ($obController) {
+        //     // Найди ID модели в backend контроллере October CMS
+        //     dd($obController->model);
+        //     $id = $obController->page->id;
+        // });
+
+        Event::listen('backend.form.extendFields', function($form) {
+            if (
+                !$form->getController() instanceof Services ||
+                !$form->getModel() instanceof Service ||
+                !isset($form->getModel()->id) ||
+                $form->isNested
+            ) {
+                return;
+            }
+            if ($form->getModel()->category->properties_file_path) {
+                $file_path = Theme::getActiveTheme()->getPath() . DIRECTORY_SEPARATOR . 'meta/services/' . $form->getModel()->category->properties_file_path;
+                $form->addTabFields([
+                    'content' => [
+                        'tab' => 'Контент',
+                        // 'label' => 'My Field',
+                        'type' => 'repeater',
+                        // 'comment' => 'This is a custom field I have added.',
+                        'displayMode' => 'builder',
+                        'prompt' => 'Добавить блок',
+                        'groups' => $file_path
+                    ],
+                ]);
+            }
+        });
         Event::listen('pages.menuitem.listTypes', function() {
             return [
                 'all-service-categories'=>'Все категории услуг',

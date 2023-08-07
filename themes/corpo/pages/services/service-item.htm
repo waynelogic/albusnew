@@ -1,0 +1,101 @@
+url = "/services/:category/:slug?"
+layout = "default"
+title = "Услуги - страница элемента"
+
+[ServicePage]
+slug = "{{ :slug }}"
+==
+{% put hide_br_title = 'true' %}
+{% set obService = ServicePage.get() %}
+{% set background = obService.background ?  obService.background.path : 'https://static.mts.ru/dpc_upload/contents/383/mm_family_desktop_2364_1104.jpg' %}
+
+
+<section class="">
+    <div class="container">
+        <div class="relative rounded-3xl overflow-hidden h-96 isolate">
+            <!-- <div class="absolute w-1/2 h-full bg-gray-200"></div>
+            <div class="absolute right-0 w-1/2 h-full text-gray-200">
+                <svg width="104" height="100%" xmlns="http://www.w3.org/2000/svg" fill="currentColor">
+                    <path stroke="null" id="svg_1" fill="currentColor" d="m29.574,0l-705.574,0l0,368l779.291,0c-13.516,-20.326 -26.051,-41.17 -37.436,-62.35c-64.902,-119.921 -81.449,-229.4527 -44.939,-292.6891c2.561,-4.43356 5.449,-8.75582 8.658,-12.9609z" clip-rule="evenodd" fill-rule="evenodd"></path>
+                </svg>
+            </div> -->
+            <img class="absolute w-full h-full object-cover z-[-1]" src="{{ background }}" alt="">
+            <img class="absolute bottom-0 right-0 h-full" src="{{ obService.image.path }}" alt="">
+        </div>
+        <div class="relative px-10 z-10 mb-12">
+            <div class="grid lg:grid-cols-12">
+                <div class="col-span-4 -mt-80">
+                    <div class="white-box p-6">
+                        <!-- <span class="inline-block bg-blue-500 text-white px-3 py-1 rounded-full mb-4">
+                            Скидка до 1 сентября
+                        </span> -->
+                        <h2 class="text-4xl font-bold uppercase mb-4">{{ obService.name }}</h2>
+                        <p class="mb-4">{{ obService.preview_text }}</p>
+                        <div class="flex flex-col space-y-2 mb-6">
+                            <div class="flex items-center">
+                                <span class="bg-[#f2f3f7] rounded-full p-3">
+                                    {% partial 'ui/icon' icon='house' s=2 %}
+                                </span>
+                                <span class="text-xl font-semibold ml-4">
+                                    {{ obService.suitable_for }}
+                                </span>
+                            </div>
+                            <div class="flex items-center">
+                                <span class="bg-[#f2f3f7] rounded-full p-3">
+                                    {% partial 'ui/icon' icon='clock' s=2 %}
+                                </span>
+                                <span class="text-xl font-semibold ml-4">
+                                    {{ obService.deadline }}
+                                </span>
+                            </div>
+                        </div>
+                        <div class="text-4xl font-bold mb-4"><span class="text-gray-500 text-xl">от </span><span class="font-serif">{{ obService.price | number_format (0, ',', ' ') }} ₽</span></div>
+
+                        <button class="btn btn-default w-full">Заказать сайт</button>
+                    </div>
+                </div>
+                <div class="col-span-8 px-20">
+                    <p class="text-3xl font-semibold mt-10">Мы запустим ваш проект быстро и с комфортом для вас. Спокойно занимайтесь бизнесом, а мы займемся сайтом.</p>
+                </div>
+            </div>
+        </div>
+        <div>
+            <!-- <h3 class="text-4xl font-bold uppercase mb-4">Подробности об услуге</h3> -->
+            {% set siteFeatures = [
+                {
+                    'title': 'Адаптивный 1-страничный сайт (20 блоков)',
+                    'icon': 'browsers'
+                },
+                {
+                    'title': 'Готовые дизайны на выбор',
+                    'icon': 'bezier-curve'
+                },
+                {
+                    'title': 'Регистрация в поисковых системах',
+                    'icon': 'google-logo'
+                },
+                {
+                    'title': 'Установка счетчика посещаемости',
+                    'icon': 'users-three'
+                },
+                {
+                    'title': 'Наполнение сайта (информацией по материалам Заказчика) в подарок',
+                    'icon': 'handshake'
+                },
+                {
+                    'title': 'Корпоративная почта ваше-имя@имя-сайта.ru', 
+                    'icon': 'envelope-open'
+                }
+            ] %}
+        </div>
+
+    </div>
+</section>
+
+<div class="grid gap-4 mb-12">
+{% for obBlock in obService.content %}
+    <div class="container">
+        {% partial 'blocks/' ~ obBlock._group obBlock=obBlock %}
+    </div>
+{% endfor %}
+</div>

@@ -10,7 +10,6 @@ use Backend\Classes\Controller;
  */
 class Services extends Controller
 {
-    
     public $implement = [
         \Backend\Behaviors\FormController::class,
         \Backend\Behaviors\ListController::class,
@@ -24,11 +23,7 @@ class Services extends Controller
     /**
      * @var string listConfig file
      */
-    // public $listConfig = 'config_services_list.yaml';
-    public $listConfig = [
-        'services' => 'config_list_services.yaml',
-        'categories' => 'config_list_categories.yaml',
-    ];
+    public $listConfig = 'config_list.yaml';
 
     /**
      * @var array required permissions
@@ -40,21 +35,8 @@ class Services extends Controller
      */
     public function __construct()
     {
-        $this->vars['mode'] = false;
-
-        if (post('categories_mode')) {
-            $this->vars['mode'] = 'categories';
-            $this->formConfig = 'config_list_categories.yaml';
-        }
-
         parent::__construct();
 
         BackendMenu::setContext('Albus.Corporate', 'corporate', 'services');
-    }
-
-    public function index()
-    {
-        $this->asExtension('ListController')->index();
-        $this->bodyClass = 'compact-container';
     }
 }

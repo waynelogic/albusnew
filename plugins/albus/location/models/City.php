@@ -23,7 +23,7 @@ class City extends Model
      */
     public $rules = [];
 
-    protected $fillable = ['name', 'code', 'iso', 'geonames_id'];
+    protected $fillable = ['active', 'name', 'code', 'iso', 'latitude', 'longitude', 'geonames_id', 'country_id', 'region_id'];
 
     public $belongsTo = [
         'country' => Country::class,

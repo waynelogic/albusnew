@@ -11,56 +11,10 @@ categoryPage = "services/category"
 {% partial "home/services" %}
 {% partial "home/call-back" %}
 {% partial "home/packages" %}
-
-<section class="bg-[#1d2023]">
-    <div class="container py-12">
-
-        <div class="grid lg:grid-cols-2 gap-20">
-            <div>
-                <h2 class="text-4xl font-serif font-semibold text-white uppercase flex items-center mb-10">
-                    <span class="mr-2">Начни жизнь с чистого листа</span>
-                    <span>{% partial 'ui/icon' icon='caret-right-bold' s=3 %} </span>
-                </h2>
-                <img class="relative block w-full rounded-3xl shadow-[0_0_100px_0_#F8B326]" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/resource/image-1.jpg" alt="">
-            </div>
-            <div>
-                <p class="block text-white mb-6">Альбус — компания, анализирующая потребности и бизнес-процессы организаций. Работаем с 2018 года, занимаемся автоматизацией бизнеса, управлением активами и инвестиций, финансовым аудитом и оказываем услуги лизинга и юридической практики..</p>
-
-                {% set arPoints = [
-                    {
-                        title: 'Качественный веб-сайт - позволит привлечь новых клиентов.',
-                        icon: 'browsers'
-                    },
-                    {
-                        title: 'Правильно настроенная система учета - обеспечит надежную финансовую базу.',
-                        icon: 'handshake'
-                    },
-                    {
-                        title: 'Эффективная работа менеджеров - профессионализм менеджеров сделает бизнес более успешным и устойчивым.',
-                        icon: 'user-circle'
-                    },
-                    {
-                        title: 'Эффективная работа менеджеров - профессионализм менеджеров сделает бизнес более успешным и устойчивым.',
-                        icon: 'user-circle'
-                    },
-                ] %}
-                <ul class="mt-4 space-y-8 text-white">
-                    {% for obItem in arPoints %}
-                    <li class="flex items-center">
-                        <span class="bg-primary text-white rounded-3xl flex items-center justify-center p-3">
-                            {% partial 'ui/icon' icon=obItem.icon s=6 %}
-                        </span>
-                        <span class="ml-8">{{ obItem.title }}</span>
-                    </li>
-                    {% endfor %}
-                </ul>
-            </div>
-        </div>
-    </div>
-</section>
+{% partial 'home/new-live' %}
 
 {% set obEmployeeList = EmployeeList.get() %}
-<section class="employee-list">
+<section class="employee-list section-box">
     <div class="container py-12">
         <h2 class="text-4xl font-semibold font-serif mb-6">Наша команда</h2>
         <div class="swiper py-4" data-lazy="slider" data-space-between="10" data-breakpoints='{"768": {"slidesPerView": 2, "spaceBetween": 20}, "1200": {"slidesPerView": 3, "spaceBetween": 30}}'>
@@ -84,7 +38,7 @@ categoryPage = "services/category"
     </div>
 </section>
 
-<section class="">
+<section class="section-box">
     <div class="container text-white pb-12">
         <div class="shadow-round transition-all hover:-translate-y-0.5 hover:shadow-md flex justify-between items-center rounded-3xl" style="background: linear-gradient(270deg, #F8B326 0%, #FFD598 16.91%, #FFAA7C 33.48%, #FF9B74 100%);">
             <img class="ml-10 w-40 py-6" src="{{ 'assets/images/index/laptop.png' | theme }}" alt="">
@@ -96,6 +50,34 @@ categoryPage = "services/category"
             <div>
                 <div class="md:hidden text-lg font-bold uppercase">Разработка сайта</div>
                 <div class="mr-10">Подписка на&nbsp;50&nbsp;ГБ<br>интернета, кино,<br>музыку, кешбэк<br>и&nbsp;другие привилегии</div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section class="section-box">
+    <div class="container py-12">
+        <div class="grid lg:grid-cols-12 gap-10">
+            <div class="lg:col-span-8">
+                <div class="bg-white shadow-round rounded-3xl transition-all hover:shadow-md p-10">
+                    <h2 class="text-3xl font-medium font-serif uppercase mb-6">Обратная связь</h2>
+
+                    <script data-b24-form="inline/4/tgwkp0" data-skip-moving="true">(function(w,d,u){var s=d.createElement('script');s.async=true;s.src=u+'?'+(Date.now()/180000|0);var h=d.getElementsByTagName('script')[0];h.parentNode.insertBefore(s,h);})(window,document,'https://cdn-ru.bitrix24.ru/b16166412/crm/form/loader_4.js');</script>
+                </div>
+            </div>
+            <div class="lg:col-span-4">
+                <div class="white-box p-10">
+                    <div class="flex">
+                        <div>
+                            <h2 class="text-3xl font-medium font-serif uppercase mb-6">Личный кабинет</h2>
+                            <p class="mb-4">Максимум возможностей для управления счётом и услугами мобильной связи</p>
+                        </div>
+                        <span class="self-start bg-primary text-white rounded-full p-4">
+                            {% partial 'ui/icon' icon='user-circle' s=4 %}
+                        </span>
+                    </div>
+                    <a class="btn btn-default w-full">Войти</a>
+                </div>
             </div>
         </div>
     </div>

@@ -1,10 +1,6 @@
 {% set url = obProduct.getPageUrl('products/index') %}
 {% set obOffer = obProduct.offer.sort('price|desc').first %}
-{% if obProduct.preview_image %}
-    {% set cover = obProduct.preview_image.path %}
-{% else %}
-    {% set cover = 'assets/images/common/no-image.png' | theme %}
-{% endif %}
+{% set cover = obProduct.preview_image ? obProduct.preview_image.path : 'assets/images/common/no-image.png' | theme %}
 {% set pictureData = {
     img : cover,
     formats : [ 'webp', 'png' ],
@@ -15,52 +11,13 @@
         height : 600,
     }
 ]}%}
-{#<div class="group bg-white flex flex-col relative border border-[#ececec] hover:shadow-out  transition-all hover:z-10" data-id="{{ obProduct.id }}">
-    <div class="px-6 pt-6 overflow-hidden relative">
-        <a href="{{ url }}" class="block h-[200px] bg-white">
-            {% partial 'picture' data=pictureData %}
-        </a>
-        <div class="absolute left-0 top-0 {{ index == 1 ? 'bg-primary' }} {{ index == 2 ? 'bg-sky-500 ' }} {{ index == 3 ? 'bg-pink-600' }} text-white text-base rounded-br-2xl px-3 py-1">New</div>
-    </div>
-    <div class="px-5 pb-5 py-3 grow">
-        <div class="product-category mb-3">
-            <a class="text-[#adadad] text-base mt-1" href="{{ url }}">{{ obProduct.category.name }}</a>
-        </div>
-        <h2 class="text-[#253D4E] font-bold text-base"><a href="{{ url }}">{{ obProduct.name }}</a></h2>
-        <div class="mt-4 flex justify-between items-center">
-            <div class="product-price">
-                <span class="text-base font-medium">{{ obOffer.price ? obOffer.price ~ ' ' ~ obOffer.currency : '-' }}</span>
-            </div>
-            <div class="add-cart">
-                <!-- <a class="bg-primary/20 text-primary inline-flex items-center text-base font-bold rounded-md py-2 px-5 transition-all duration-300 hover:-translate-y-1 hover:text-white hover:bg-primary" href="{{ url }}">
-                    {% partial 'icon' icon='shopping-cart' s=1 %}
-                </a> -->
-            </div>
-        </div>
-    </div>
-    <div class="footer-button absolute top-full shadow-out invisible opacity-0 transition-all group-hover:opacity-100 group-hover:visible">
-        <div class="grid grid-cols-2 text-sm">
-            <div class="cart-counter rounded-none" data-lazy="cartCounter">
-                <span class="minus ctrl">-</span>
-                <input class="val" type="text" name="quantity" min="1" value="1"/>
-                <span class="plus ctrl">+</span>
-            </div>
-            <button type="submit" class="btn-default flex items-center justify-center font-semibold text-sm rounded-none py-2">
-                {% partial 'ui/icon' icon='shopping-cart' s=1 %}
-                <span class="block ml-2">В корзину</span>
-            </button>
-        </div>
-        <!-- <a href="/product/zashchita-onlayn-platezhey/platezhnyy-agregator/" class="btn btn-default">Подробнее</a> -->
-    </div>
-</div>#}
-
-<div class="border border-[#f1ede0] rounded-2xl shadow-sm overflow-hidden transition-all hover:-translate-y-0.5 hover:shadow-out hover:border-slate-400">
-    <a href="{{ url }}" class="block h-64  bg-white">
+<div class="bg-white border border-[#f1ede0] rounded-2xl shadow-sm overflow-hidden transition-all hover:-translate-y-0.5 hover:shadow-out hover:border-slate-400">
+    <a href="{{ url }}" class="block h-64 py-2">
         {% partial 'ui/picture' data=pictureData %}
     </a>
     <div class="px-5 pb-5 pt-4 grow">
         <a class="text-[#adadad] flex text-base mb-3" href="{{ url }}">{{ obProduct.category.name }}</a>
-        <h2 class="text-[#253D4E] font-semibold text-base"><a href="{{ url }}">{{ obProduct.name }}</a></h2>
+        <h4 class="text-[#253D4E] font-semibold text-base line-clamp-2"><a href="{{ url }}">{{ obProduct.name }}</a></h4>
         <div class="mt-4 flex justify-between items-center">
             <div class="product-price">
                 <span class="text-base font-medium">{{ obOffer.price ? obOffer.price ~ ' ' ~ obOffer.currency : '-' }}</span>

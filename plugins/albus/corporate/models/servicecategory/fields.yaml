@@ -3,6 +3,13 @@
 # ===================================
 
 fields:
+    active:
+        tab: Услуга
+        label: Активность
+        default: true
+        type: switch
+        span: full
+
     name:
         label: Наименование
         span: auto
@@ -44,3 +51,7 @@ fields:
         label: Иконка (SVG)
         type: textarea
         size: tiny
+
+    properties_file_path:
+        label: Путь до файла свойств
+        type: text

@@ -1,0 +1,67 @@
+items:
+    -
+        title: 'О компании'
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: company/index
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Команда
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: company/staff
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Карьера
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: company/vacancy
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Партнеры
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: company/partners
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+    -
+        title: Отзывы
+        nesting: null
+        type: cms-page
+        url: null
+        code: ''
+        reference: company/reviews
+        cmsPage: null
+        replace: null
+        viewBag:
+            isHidden: '0'
+            cssClass: ''
+            isExternal: '0'
+name: Компания

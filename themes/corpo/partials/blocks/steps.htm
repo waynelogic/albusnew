@@ -1,0 +1,35 @@
+<section class="steps-section">
+    <div class="container py-12">
+        <h2 class="text-3xl font-semibold mb-4">{{ obBlock.section_title }}</h2>
+        <div class="grid grid-cols-3 gap-10">
+            {% for obItem in obBlock.steps %}
+                <div class="flex flex-col">
+                    <div class="flex items-center mb-4">
+                        <span class="shrink-0 bg-black text-white text-xl font-bold h-12 w-12 flex items-center justify-center rounded-xl mr-10">{{ loop.index }}</span>
+                        <span class="block bg-[#e4e4e4] w-full h-[1px]"></span>
+                    </div>
+                    <h4 class="font-semibold mb-2">{{ obItem.title }}</h4>
+                    <p>{{ obItem.details }}</p>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+
+
+
+<!-- <div class="container py-12">
+    <h2 class="text-3xl font-semibold mb-4">Как открыть вклад, если я не клиент банка?</h2>
+    <div class="grid grid-cols-3 gap-10">
+        {% for obItem in obBlock.steps %}
+            <div class="isolate overflow-hidden relative shadow-[30px_57px_100px_89px_rgba(239,242,247,1)_inset] p-6 rounded-2xl flex flex-col">
+                <h4 class="text-lg font-bold mb-2">{{ obItem.title }}</h4>
+                <div class="text-2xl text-primary font-bold mb-4">20 000 </div>
+                <p>{{ obItem.details }}</p>
+                <div class="z-[-1] -right-3 -top-3 h-32 w-32 absolute flex items-center justify-center bg-slate-100 text-9xl shadow-[30px_57px_100px_89px_rgba(50,50,50,0.05)_inset] font-semibold rounded-full text-[#d5dae1]">
+                    {{ loop.index }}
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div> -->

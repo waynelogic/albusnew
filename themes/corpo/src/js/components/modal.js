@@ -16,7 +16,9 @@ export class Modal {
             autoOpen: true,
             showClass: 'show',
             afterShown: () => {},
-            afterClose: () => {},
+            afterClose: () => {
+                this.destroy();
+            },
             afterOpen: () => {},
             beforeClose: () => {}
         }
@@ -24,6 +26,7 @@ export class Modal {
         this.modal.addEventListener('click', ({target}) => {
             if (target.dataset.close != undefined) {
                 this.toggle();
+                this.options.afterClose();
             }
         })
         this.elements = {
@@ -48,6 +51,9 @@ export class Modal {
                 elements: this.elements
             });
         }
+    }
+    destroy() {
+        delete this;
     }
 }
 

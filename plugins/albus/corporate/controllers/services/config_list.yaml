@@ -3,16 +3,16 @@
 # ===================================
 
 # Model List Column configuration
-list: $/albus/corporate/models/servicecategory/columns.yaml
+list: $/albus/corporate/models/service/columns.yaml
 
 # Model Class name
-modelClass: Albus\Corporate\Models\ServiceCategory
+modelClass: Albus\Corporate\Models\Service
 
 # List Title
-title: Услуги
+title: Manage Services
 
 # Link URL for each record
-recordUrl: albus/corporate/servicecategories/update/:id
+recordUrl: albus/corporate/services/update/:id
 
 # Message to display if the list is empty
 noRecordsMessage: backend::lang.list.no_records
@@ -30,9 +30,9 @@ showSetup: true
 showSorting: true
 
 # Default sorting column
-# defaultSort:
-#     column: created_at
-#     direction: desc
+defaultSort:
+    column: id
+    direction: asc
 
 # Display checkboxes next to each record
 showCheckboxes: true
@@ -40,7 +40,7 @@ showCheckboxes: true
 # Toolbar widget configuration
 toolbar:
     # Partial for toolbar buttons
-    buttons: categories_list_toolbar
+    buttons: list_toolbar
 
     # Search widget configuration
     search:
@@ -48,7 +48,7 @@ toolbar:
 
 # Reordering
 structure:
-    showTree: true
+    showTree: false
     showReorder: true
     treeExpanded: true
     maxDepth: 0

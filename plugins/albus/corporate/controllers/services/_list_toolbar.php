@@ -1,5 +1,11 @@
 <div data-control="toolbar">
     <a
+        href="<?= Backend::url('albus/corporate/servicecategories') ?>"
+        class="btn btn-default oc-icon-database">
+        Категории
+    </a>
+    
+    <a
         href="<?= Backend::url('albus/corporate/services/create') ?>"
         class="btn btn-primary oc-icon-plus">
         <?= e(trans('backend::lang.list.create_button', ['name'=>'Услугу'])) ?>
@@ -14,4 +20,3 @@
         <?= e(trans('backend::lang.list.delete_selected')) ?>
     </button>
 </div>
-

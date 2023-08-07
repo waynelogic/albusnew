@@ -13,10 +13,20 @@ body {
         @apply pointer-events-none;
     }
     body {
+        @apply bg-[#ffffff];
         @apply text-[#1d2023];
     }
     .container {
         @apply mx-auto;
+    }
+    .white-box {
+        @apply bg-white shadow-round rounded-3xl transition-all duration-300 hover:-translate-y-0.5 hover:shadow-md;
+    }
+    .section-box {
+        @apply bg-[#f2f3f7];
+    }
+    .site-footer {
+        @apply bg-[#f2f3f7];
     }
 }
 
@@ -37,6 +47,9 @@ body {
     .swiper-button-prev.swiper-button-disabled, .swiper-button-next.swiper-button-disabled   {
         @apply bg-[#bcc3d080] cursor-auto;
     }
+    .swiper-button-prev.swiper-button-lock, .swiper-button-next.swiper-button-lock {
+        @apply hidden;
+    }
 
     .swiper.standart-navigation .swiper-button-prev, .swiper.standart-navigation .swiper-button-next {
         @apply absolute -translate-y-1/2 top-1/2;
@@ -47,14 +60,15 @@ body {
     .swiper.standart-navigation .swiper-button-next {
         @apply right-6 rotate-180;
     }
+
     .btn {
-        @apply inline-flex items-center justify-center text-lg font-semibold rounded-xl shadow-md px-11 py-4 transition-all duration-300;
+        @apply text-base inline-flex items-center justify-center font-semibold rounded-lg px-5 py-2.5 border border-transparent transition-all duration-300;
     }
     .btn-default {
-        @apply text-[#0F0F0F] bg-primary hover:bg-primary-600;
+        @apply text-white bg-primary hover:bg-primary-600;
     }
     .btn-white {
-        @apply text-[#0F0F0F] bg-white hover:bg-primary-600;
+        @apply text-[#0F0F0F] border-[#bcc3d080] bg-white hover:bg-[#eef0f3];
     }
     .form-control {
         @apply rounded-lg border-2 border-gray-200 outline-none transition-all focus:border-primary block shadow-sm focus:ring focus:ring-primary focus:ring-opacity-50;
@@ -77,6 +91,25 @@ body {
     .tab-pane.open {
         @apply h-auto overflow-visible;
     }
+}
+
+.b24-form-wrapper, .b24-form-content {
+    box-shadow: none !important; 
+    max-width: inherit !important;
+    min-height: inherit !important;
+    padding: 0 !important;
+    margin: 0 !important;
+    border: none !important;
+}
+.b24-form-btn-block {
+    padding: 0 !important;
+}
+.b24-form-sign, .b24-form-header-padding {
+    display: none !important;
+}
+
+.b24-form-btn {
+    border-radius: 0.75rem !important;
 }
 
 

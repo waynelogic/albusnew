@@ -1,0 +1,29 @@
+url = "/company/staff"
+layout = "company"
+title = "Команда"
+
+[DepartmentList]
+==
+<div class="text_before_items">Все наши сотрудники имеют многолетний опыт работы и являются высококлассными специалистами. Под чутким контролем наших всемирно признанных руководителей они способны справиться с задачей любой сложности. <br>
+    <br>
+    Отличительная черта нашей компании — мобильность. Готовы давать консультации по Skype, выезжать на встречи в удобное для вас место или принять вас в нашем&nbsp;офисе за чашкой кофе.
+</div>
+
+{% set arDepartmentList = DepartmentList.get() %}
+<div class="grid gap-8 py-10">
+{% for obDepartment in arDepartmentList %}
+    {% if obDepartment.employees %}
+        <div>
+            <h3 class="text-2xl">{{ obDepartment.name }}</h3>
+            <p class="text-base mt-6">{{ obDepartment.preview_text }}</p>
+            <ul class="mt-6 space-y-8">
+                {% for obItem in obDepartment.employees %}
+                <li>
+                    {% partial 'employee/list/item' obEmployee=obItem %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endfor %}
+</div>

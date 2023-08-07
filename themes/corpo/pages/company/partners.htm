@@ -1,0 +1,23 @@
+title = "Партнеры"
+layout = "company"
+url = "/company/partners"
+
+[PartnerList]
+==
+<section class="partners-page">
+    <div class="container">
+        <div class="grid">
+            {% for obPartner in PartnerList.get() %}
+                <div class="white-box flex p-6">
+                    <img class="self-start" src="{{ obPartner.logo.path }}" width="200px" height="200px" alt="">
+                    <div class="ml-10">
+                        <h4 class="text-3xl font-serif font-semibold">{{ obPartner.name }}</h4>
+                        <div class="mt-5 prose max-w-none">
+                            {{ obPartner.description | raw }}
+                        </div>
+                    </div>
+                </div>
+            {% endfor %}
+        </div>
+    </div>
+</section>

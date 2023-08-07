@@ -170,3 +170,7 @@
     - table_update_orders_add_site_id_field.php
 1.32.1:
     - 'Updated composer file'
+1.32.2:
+    - 'Minor fix of integration with multisite.'
+1.32.3:
+    - 'Fixed weight calculation in orders. Thanks for contribution Nick Khaetsky.'

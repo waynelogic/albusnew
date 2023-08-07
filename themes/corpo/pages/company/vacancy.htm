@@ -1,0 +1,57 @@
+url = "/company/vacancy"
+layout = "company"
+title = "Карьера"
+==
+<div class="vacancy_desc">
+    <div class="image">
+        <img class="img-responsive" src="https://priority.aspro-demo.ru/upload/iblock/394/394df3fcf18b1d3237413d42b548b747.jpg" alt="О компании">
+    </div>
+    <div class="flex max-sm:flex-wrap border p-10">
+        <div class="mr-10 shrink-0 max-sm:mb-6 py-2">
+            <a href="/services/lizing/avtomobili-s-klassa/" class="inline-flex bg-primary text-white rounded-md text-sm md:text-base uppercase px-4 py-3">
+                Отправить резюме
+            </a>
+        </div>
+        <div class="wrap">
+            <div class="flex flex-wrap">
+                <div class="mr-10 py-2">
+                    <div class="text-[#999] text-sm uppercase">Контактное лицо</div>
+                    <div class="value">
+                        Пригода Александр
+                    </div>
+                </div>
+                <div class="mr-10 py-2">
+                    <div class="text-[#999] text-sm uppercase">E-mail</div>
+                    <div class="value">
+                        <a class="dark-color" href="mailto:prigoda.a@albus-it.ru">prigoda.a@albus-it.ru</a>
+                    </div>
+                </div>
+                <div class="py-2">
+                    <div class="text-[#999] text-sm uppercase">Телефон</div>
+                    <div class="value">
+                        +7 989 5-1234-44 </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+{% set arDepartmentList = DepartmentList.make().active() %}
+<div class="grid gap-8 py-10">
+{% for obDepartment in arDepartmentList %}
+    {% if obDepartment.jobs %}
+        <div>
+            <h3 class="text-2xl">{{ obDepartment.name }}</h3>
+            <p class="text-base mt-6">{{ obDepartment.preview_text }}</p>
+            <ul class="space-y-10 mt-6">
+                {% for obJob in obDepartment.jobs %}
+                <li>
+                    {% partial 'employee/job-item' obJob=obJob %}
+                </li>
+                {% endfor %}
+            </ul>
+        </div>
+    {% endif %}
+{% endfor %}
+</div>

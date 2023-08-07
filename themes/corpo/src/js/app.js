@@ -22,6 +22,10 @@ window.calc = function(object){
     import('./components/calc').then(({ default : init }) => init(object) );
 }
 
+window.locationPicker = function(object){
+    import('./components/location').then(({ default : init }) => init(object) );
+}
+
 window.onload = () => {
     // import('./components/header').then(({ default : initHeader }) => initHeader() );
     import('./components/dropdown').then(({ default : initDropdown }) => initDropdown());
@@ -29,6 +33,15 @@ window.onload = () => {
     cloak.forEach(element => {
         element.removeAttribute('x-cloak');
     });
+    document.querySelectorAll('[data-location]').forEach(element => {
+        element.addEventListener('click', ({target}) => {
+            const location = target.dataset.location;
+            if (location == undefined) return;
+            window.locationPicker(target);
+        })
+    })
+
+
     const arLazyItems = document.querySelectorAll('[data-lazy]');
     arLazyItems.forEach(element => {
         var fnName = element.dataset.lazy;

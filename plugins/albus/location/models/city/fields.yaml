@@ -23,11 +23,11 @@ fields:
         default: true
         span: auto
     latitude:
-        label: Latitude
+        label: Широта
         type: text
         span: auto
     longitude:
-        label: Longitude
+        label: Долгота
         type: text
         span: auto
     timezone:

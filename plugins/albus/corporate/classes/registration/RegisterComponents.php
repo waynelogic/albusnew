@@ -21,6 +21,9 @@ trait RegisterComponents {
             'Albus\Corporate\Components\DepartmentList' => 'DepartmentList',
 
             'Albus\Corporate\Components\PartnerList' => 'PartnerList',
+            
+            'Albus\Corporate\Components\PriceList' => 'PriceList',
+
         ];
     }
 }

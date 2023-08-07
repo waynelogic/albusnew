@@ -1,0 +1,28 @@
+[LocationPicker]
+==
+<!DOCTYPE html>
+<html lang="{{ this.site.locale }}">
+<head>
+    {% partial "common/meta" %}
+</head>
+<body>
+    {% apply spaceless %}
+        {% partial "common/header/container" %}
+        {% partial "common/breadcrumbs/container" %}
+        <main>
+            <div class="container">
+                <div class="grid lg:grid-cols-12 gap-10">
+                    <div class="lg:col-span-3">
+                        {% partial 'company/aside' %}
+                    </div>
+                    <div class="lg:col-span-9">
+                        {% page %}
+                    </div>
+                </div>
+            </div>
+        </main>
+        {% partial "common/footer" %}
+        {% partial "common/scripts" %}
+    {% endapply %}
+</body>
+</html>

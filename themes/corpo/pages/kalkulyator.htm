@@ -41,7 +41,14 @@ url = "/calk"
         icon: 'chart-bar',
         description: 'Слайдер - это блок с баннерами, которые циклически сменяют друг друга. Как правило размещен в верхней части сайта.',
     },
-    
+    {
+        title: 'Дополнительные страницы',
+        name: 'pages',
+        price: 1500,
+        type: 'input',
+        icon: 'chart-bar',
+        description: 'Слайдер - это блок с баннерами, которые циклически сменяют друг друга. Как правило размещен в верхней части сайта.',
+    },
 ] %}
 
 <section class="py-12">
@@ -49,7 +56,7 @@ url = "/calk"
         <section class="mb-6 ">
             <h3 class="text-3xl font-serif font-semibold mb-6">Дизайн</h3>
             <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-10">
-                <label class="flex flex-col items-center bg-white shadow-round rounded-3xl p-6">
+                <label class="flex flex-col items-center bg-white shadow-round rounded-3xl p-6" data-trigger-action="show" data-trigger-condition="unchecked" data-trigger-field="pages_switch">
                     <img src="{{ 'assets/images/calc/own-design.svg' | theme }}" width="50%" alt="">
                     <div class="inline-flex items-center mt-5">
                         <input class="w-6 h-6 calc-item mr-2" type="radio" name="design" value="0" checked>
@@ -82,8 +89,11 @@ url = "/calk"
                                 {% partial 'ui/icon' icon='tag' s=1 %}
                                 <span class="ml-2">{{ obItem.price }} руб.</span>
                             </div>
+                            {% if obItem.type == 'input' %}
+                            <input class="calc-item" type="number" name="{{ obItem.name }}" data-trigger-action="show" data-trigger-field="{{ obItem.name }}_switch" data-trigger-condition="checked">
+                            {% endif %}
                             <label class="relative inline-flex items-center cursor-pointer">
-                                <input type="checkbox" value="{{ obItem.price }}" class="sr-only peer calc-item">
+                                <input type="checkbox" value="{{ obItem.price }}" name="{{ obItem.name }}_switch" class="sr-only peer">
                                 <div class="w-11 h-6 bg-gray-200 peer-focus:outline-none peer-focus:ring-2 peer-focus:ring-primary/20 rounded-full peer peer-checked:after:translate-x-full peer-checked:after:border-white after:content-[''] after:absolute after:top-[2px] after:left-[2px] after:bg-white after:border-gray-300 after:border after:rounded-full after:h-5 after:w-5 after:transition-all peer-checked:bg-primary"></div>
                             </label>
                         </div>

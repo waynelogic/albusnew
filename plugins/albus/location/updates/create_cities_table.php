@@ -19,11 +19,11 @@ return new class extends Migration
         Schema::create('albus_location_cities', function(Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('active')->default(false);
             $table->string('name');
             $table->integer('geonames_id')->nullable();
             $table->integer('region_id')->unsigned()->nullable()->index();
             $table->integer('country_id')->unsigned()->nullable()->index();
-            $table->integer('active')->default(true);
             $table->string('latitude')->nullable();
             $table->string('longitude')->nullable();
             $table->string('timezone')->nullable();

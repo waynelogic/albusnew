@@ -36,7 +36,7 @@ class Plugin extends PluginBase
      */
     public function boot()
     {
-        // $import = new ApiImport();
+        $import = new ApiImport();
         // $import->getRegions('RU');
         // $import->updateCitiesByCountry('RU');
     }
@@ -46,10 +46,9 @@ class Plugin extends PluginBase
      */
     public function registerComponents()
     {
-        return []; // Remove this line to activate
-
         return [
-            'Albus\Location\Components\MyComponent' => 'myComponent',
+            'Albus\Location\Components\LocationPicker' => 'LocationPicker',
+            'Albus\Location\Components\Locations' => 'Locations',
         ];
     }
 

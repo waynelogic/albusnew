@@ -2,6 +2,8 @@
 
 use Model;
 use System\Models\File;
+use Cms\Classes\Controller;
+
 use Albus\Corporate\Models\ServiceCategory;
 /**
  * Service Model
@@ -29,7 +31,8 @@ class Service extends Model
      */
     protected $slugs = ['slug' => 'name'];
     
-    protected $jsonable = ['content'];
+    protected $jsonable = ['content', 'properties', 'steps', 'blocks'];
+
     /**
      * File Attachments
      *
@@ -55,5 +58,13 @@ class Service extends Model
             'depends' => ['Зависит от объема работ', '#bdc3c7'],
             'from' => ['От', '#bdc3c7'],
         ];
+    }
+
+    public function getPageUrl($pageId) {
+        $controller = Controller::getController();
+        return $controller->pageUrl($pageId, [
+            'category' => $this->category->slug,
+            'slug' => $this->slug
+        ]);
     }
 }

@@ -1,16 +1,15 @@
 <?php namespace Albus\Corporate\Components;
 
-use Albus\Corporate\Classes\Component\ElementPage;
+use Cms\Classes\ComponentBase;
+
 use Albus\Corporate\Models\Service;
 /**
  * ServicePage Component
  *
  * @link https://docs.octobercms.com/3.x/extend/cms-components.html
  */
-class ServicePage extends ElementPage
+class ServicePage extends ComponentBase
 {
-    const ITEM_CLASS = Service::class;
-
     public function componentDetails()
     {
         return [
@@ -19,8 +18,28 @@ class ServicePage extends ElementPage
         ];
     }
 
-    public function getElementObject()
+    public function defineProperties()
     {
-        $this->obElement = static::ITEM_CLASS::where('slug', $this->sElementSlug)->first();
+        return [
+            'slug' => [
+                'title'   => 'Категория',
+                'description'   => 'Выберите категорию',
+                'type'    => 'string',
+                'default' => '{{ :slug }}',
+            ],
+        ];
+    }
+
+    public $obItem;
+
+    public function onRun()
+    {
+        $obService = Service::where('slug', $this->property('slug'))->first();
+        $this->obItem = $obService;
+        $this->page->title = $obService->name;
+    }
+
+    public function get() {
+        return $this->obItem;
     }
 }

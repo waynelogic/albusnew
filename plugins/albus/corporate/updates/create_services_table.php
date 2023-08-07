@@ -31,6 +31,7 @@ class CreateServicesTable extends Migration
             $obTable->text('content')->nullable();
 
             $obTable->string('deadline')->nullable();
+            $obTable->string('suitable_for')->nullable();
             $obTable->string('price_type')->nullable();
             $obTable->decimal('price', 15, 2)->nullable();
             $obTable->decimal('old_price', 15, 2)->nullable();

@@ -2,13 +2,30 @@
 code = "footer"
 ==
 {% set arItems = FooterMenu.menuItems %}
-<footer class="bg-[#f2f3f7] text-silver py-20">
+{% set arContacts = [
+    {
+        text: this.theme.phone,
+        url: 'tel:' ~ this.theme.phone | replace({' ': '', '-': '', '(': '', ')': ''}),
+        icon: 'microphone'
+    },
+    {
+        text: this.theme.email,
+        url: 'mailto:' ~ this.theme.email,
+        icon: 'envelope-open'
+    },
+    {
+        text: this.theme.address | raw,
+        url: this.theme.map_link,
+        icon: 'map-pin'
+    }
+] %}
+<footer class="site-footer border border-slate-300">
     <div class="container">
-        <div class="grid md:grid-cols-12 gap-6 pb-20">
+        <div class="grid md:grid-cols-12 gap-6 py-20">
             {% for obColumn in arItems %}
             <div class="md:col-span-3">
-                <a class="text-white uppercase font-bold transition-all duration-300 hover:text-primary" href="{{ obColumn.url }}">{{ obColumn.title }}</a>
-                <ul class="space-y-3 mt-5">
+                <a class="uppercase font-bold transition-all duration-300 hover:text-primary" href="{{ obColumn.url }}">{{ obColumn.title }}</a>
+                <ul class="space-y-3 mt-5 text-gray-400">
                     {% for obItem in obColumn.items %}
                     <li>
                         <a class="transition-all duration-300 hover:text-primary" href="{{ obItem.url }}">{{ obItem.title }}</a>
@@ -18,30 +35,26 @@ code = "footer"
             </div>
             {% endfor %}
             <div class="md:col-span-3 col-sm-12 contact-block">
-                <a class="text-white uppercase font-bold transition-all duration-300 hover:text-primary" href="{{ 'common/contacts' | page }}">Контакты</a>
-                <div class="">
-                    <a href="tel:{{ this.theme.phone | replace({' ': '', '-': '', '(': '', ')': ''}) }}" class="flex w-full text-white py-4  items-center transition-all hover:shadow-out" title="Заказать звонок">
-                        {% partial 'ui/icon' icon='microphone' s=2 css='mr-4' %}
-                        <span class="">{{ this.theme.phone }}</span>
-                    </a>
-                    <a href="mailto:{{ this.theme.email }}" class="flex w-full text-white py-4  items-center transition-all hover:shadow-out" title="Заказать звонок">
-                        {% partial 'ui/icon' icon='envelope-open' s=2 css='mr-4' %}
-                        <span class="">{{ this.theme.email }}</span>
-                    </a>
-                    <a href="{{ this.theme.map_link }}" class="flex w-full text-white py-4  items-center transition-all hover:shadow-out" title="Заказать звонок">
-                        {% partial 'ui/icon' icon='map-pin' s=2 css='mr-4' %}
-                        <span class="">{{ this.theme.address | raw }}</span>
-                    </a>
-                </div>
+                <a class="uppercase font-bold transition-all duration-300 hover:text-primary" href="{{ 'common/contacts' | page }}">Контакты</a>
+                <ul class="space-y-8 mt-5 text-gray-400">
+                    {% for obItem in arContacts %}
+                    <li>
+                        <a href="{{ obItem.url }}" class="flex w-full items-center transition-all" title="Заказать звонок">
+                            {% partial 'ui/icon' icon=obItem.icon s=2 css='mr-4' %}
+                            <span class="">{{ obItem.text }}</span>
+                        </a>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>
     <div class="container">
-        <div class="relative flex justify-center before:absolute before:top-1/2 before:h-[1px] before:bg-white/20 before:w-full">
-            <ul class="relative px-5 bg-[#2f3338]">
+        <div class="relative flex justify-center before:absolute before:top-1/2 before:h-[1px] before:bg-gray-400 before:w-full">
+            <ul class="relative px-5 bg-[#f2f3f7]">
                 {% for obSocial in this.theme.social_links %}
-                <li class="m-1 inline-block">
-                    <a href="{{ obSocial.url }}" class="relative text-white flex items-center justify-center w-11 h-11 rounded border transition-all opacity-50 hover:opacity-100" target="_blank">
+                <li class="m-1 inline-block ">
+                    <a href="{{ obSocial.url }}" class="relative flex items-center justify-center w-11 h-11 rounded border-2 border-gray-400 transition-all opacity-50 hover:opacity-100" target="_blank">
                         <span class="absolute opacity-0">{{ obSocial.name }}</span>
                         {% partial 'ui/icon' icon=obSocial.name s=1 %}
                     </a>

@@ -1,0 +1,47 @@
+# secondaryTabs:
+#     properties[suitable_for]:
+#         label: Для кого
+#         type: text
+#     properties[features]:
+#         label: 'ЧТО ВХОДИТ В ТАРИФ'
+#         type: repeater
+#         form:
+#             fields:
+#                 title:
+#                     label: Заголовок
+#                     type: text
+#                 icon:
+#                     label: Иконка
+#                     type: text
+#                 description:
+#                     label: Описание
+#                     type: textarea
+steps:
+    name: Шаги
+    description: Раскрывающийся текст
+    icon: icon-caret-down
+    fields:
+        steps:
+            type: repeater
+            form:
+                fields:
+                    title:
+                        label: Заголовок
+                        type: text
+                    details:
+                        label: Описание
+                        type: textarea
+                        size: tiny
+
+accordion:
+    name: Аккордион
+    description: Раскрывающийся текст
+    icon: icon-caret-down
+    fields:
+        title:
+            label: Заголовок
+            type: text
+        text_area:
+            label: Текст
+            type: textarea
+            size: large

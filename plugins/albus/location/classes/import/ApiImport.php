@@ -63,13 +63,14 @@ class ApiImport {
         ];
 
         $arCities = $this->getDataFromApi($params);
-        // dd($arCities);
         foreach ($arCities as $city) {
             $obCity = City::firstOrNew(['name' => $city->name]);
             $obCity->name = $city->name;
             $obCity->iso = !empty($city->adminCodes1->ISO3166_2) ? $city->adminCodes1->ISO3166_2 : '' ;
             $obCity->country_id = $intCountryId;
             $obCity->region_id = isset($arRegions[$city->adminName1]) ? $arRegions[$city->adminName1] : null;
+            $obCity->latitude = $city->lat;
+            $obCity->longitude = $city->lng;
             $obCity->save();
         }
 

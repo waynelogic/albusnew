@@ -28,26 +28,13 @@ class ServiceCategoryList extends ComponentBase
      */
     public function defineProperties()
     {
-        return [
-            'categoryPage' => [
-                'title' => 'Страница элемента категории',
-                'type' => 'dropdown',
-            ],
-        ];
+        return [];
     }
-
-    public function getCategoryPageOptions() {
-        return $this->pagesWithComponent('ServiceCategoryPage');
-    }
-
 
     public $arItems;
 
     public function onRun() {
-        $arCategories = ServiceCategory::all();
-        $arCategories->each(function($category) {
-            $category->url = $this->controller->pageUrl($this->property('categoryPage'), ['category' => $category->slug]);
-        });
+        $arCategories = ServiceCategory::whereActive(true)->get();
         $this->arItems = $arCategories;
     }
 

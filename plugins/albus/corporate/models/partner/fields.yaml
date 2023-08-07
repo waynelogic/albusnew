@@ -73,6 +73,7 @@ tabs:
             imageHeight: 260
             imageWidth: 260
             maxFiles: 1
+            fileTypes: svg, png
             
         gallery:
             tab: Изображения

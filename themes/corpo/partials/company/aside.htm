@@ -1,0 +1,17 @@
+[staticMenu companyAsideNav]
+code = "company"
+==
+<aside class="">
+    <ul>
+        {% for obItem in companyAsideNav.menuItems %}
+        <li>
+            <a class="inline-flex justify-between w-full py-3 text-lg {{ obItem.isActive ? 'text-primary drop-shadow' }}  {{ not loop.first ? 'border-t' }}" href="{{ obItem.url }}">
+                <span>{{ obItem.title }}</span>
+                {% if obItem.isActive %}
+                    {% partial 'ui/icon' icon='caret-right' css='text-primary' s=2  %}
+                {% endif %}
+            </a>
+        </li>
+        {% endfor %}
+    </ul>    
+</aside>

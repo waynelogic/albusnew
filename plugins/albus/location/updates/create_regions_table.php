@@ -19,10 +19,10 @@ return new class extends Migration
         Schema::create('albus_location_regions', function(Blueprint $table) {
             $table->id();
             $table->timestamps();
+            $table->integer('active')->default(false);
             $table->integer('country_id')->unsigned()->nullable()->index();
             $table->integer('geonames_id')->nullable();
             $table->string('name')->index();
-            $table->string('code')->nullable();
             $table->string('iso')->nullable();
         });
     }

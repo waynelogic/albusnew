@@ -2,8 +2,10 @@
 
 use Model;
 use System\Models\File;
-use Cms\Classes\Page as CmsPage;
 use Cms\Classes\Theme;
+use Cms\Classes\Page as CmsPage;
+use Cms\Classes\Controller;
+use Albus\Corporate\Models\Service;
 
 /**
  * ServiceCategory Model
@@ -41,6 +43,18 @@ class ServiceCategory extends Model
         'icon_img' => File::class
     ];
 
+    public $hasMany = [
+        'services' => [ Service::class, 'key' => 'category_id']
+    ];    
+
+
+    public function getPageUrl($pageId) {
+        $controller = Controller::getController();
+        return $controller->pageUrl($pageId, [
+            'category' => $this->slug
+        ]);
+    }
+
     public static function getMenuTypeInfo($type)
     {
         $result = [];
@@ -76,20 +90,17 @@ class ServiceCategory extends Model
         $pageName = $item->cmsPage;
         $cmsPage = \Cms\Classes\Page::loadCached($theme, $pageName);
         $items   = self
-            ::get()
+            ::whereActive(true)->get()
             ->map(function (self $item) use ($cmsPage, $url, $pageName) {
-                // dd($cmsPage);
-                // $pageUrl = $cmsPage->url($pageName, ['category' => $item->slug]);
-
-                // return [
-                //     'title'    => $item->name,
-                //     'url'      => $pageUrl,
-                //     'mtime'    => $item->updated_at,
-                //     'isActive' => $pageUrl === $url,
-                //     'viewBag'  => [
-                //         'cover' => $item->cover
-                //     ],
-                // ];
+                return [
+                    'title'    => $item->name,
+                    'url'      => $item->getPageUrl($cmsPage->id),
+                    'mtime'    => $item->updated_at,
+                    'isActive' => $item->getPageUrl($cmsPage->id) === $url,
+                    'viewBag'  => [
+                        'cover' => $item->cover
+                    ],
+                ];
             })
             ->toArray();
         return [

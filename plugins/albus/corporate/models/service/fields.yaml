@@ -27,9 +27,12 @@ tabs:
         category:
             tab: Услуга
             label: Категория услуг
-            type: relation
+            type: recordfinder
+            list: ~/plugins/albus/corporate/models/servicecategory/columns.yaml
+            recordsPerPage: 10
+            title: Найти категорию
+            nameFrom: name
             span: auto
-
         price_type:
             tab: Услуга
             label: Тип цены
@@ -53,33 +56,17 @@ tabs:
             label: Срок выполнения
             type: text
             span: auto
+        suitable_for:
+            tab: Услуга
+            label: Для кого
+            type: text
+            span: auto
         active:
             tab: Услуга
             label: Активность
             default: true
             type: switch
             span: auto
-
-        #Content
-        # content:
-        #     tab: Контент
-        #     type: editorjs
-        #     span: full
-        content:
-            tab: Контент
-            type: repeater
-            displayMode: builder
-            prompt: Добавить блок
-            groups: $/albus/corporate/models/service/blocks.yaml
-            form:
-                fields:
-                    added_at:
-                        label: Date added
-                        type: datepicker
-                    details:
-                        label: Details
-                        type: textarea
-
         # Images
         image:
             tab: Изображения

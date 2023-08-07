@@ -1,10 +1,11 @@
 [ServiceCategoryList]
 categoryPage = "services/category"
 ==
-<section class="services-section">
+{#
+<section class="services-section  section-box">
     <div class="container py-12">
         <h2 class="text-4xl font-semibold font-serif mb-6">Сервисы для бизнеса</h2>
-        <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-8 ">
+        <div class="grid lg:grid-cols-3 gap-8 ">
             {% for obService in ServiceCategoryList.get() %}
             <a href="{{ obService.url }}" class="group rounded-3xl flex items-center py-8 shadow-round bg-white transition-all hover:-translate-y-0.5 hover:shadow-md">
                 <div class="px-5 py-3 mr-6 rounded-r-2xl text-gray-300 bg-[#36393c] transition-all group-hover:text-[#292c30] group-hover:bg-primary">
@@ -17,6 +18,23 @@ categoryPage = "services/category"
                         {% partial 'ui/icon' icon='caret-right-bold' s=1 %}
                     </div>
                 </div>
+            </a>
+            {% endfor %}
+        </div>
+    </div>
+</section>
+#}
+<section class="services-section  section-box">
+    <div class="container py-12">
+        <h2 class="text-4xl font-semibold font-serif mb-6">Сервисы для бизнеса</h2>
+        <div class="grid lg:grid-cols-3 gap-8 ">
+            {% for obService in ServiceCategoryList.get() %}
+            <a href="{{ obService.getPageUrl('services/category') }}" class="flex relative bg-white p-6 rounded-3xl overflow-hidden transition-all hover:shadow-bottom hover:-translate-y-1.5 hover:rotate-x-0">
+                <div class="w-2/3">
+                    <h5 class="text-2xl text-[#3e3e3e] leading-6 font-serif font-bold uppercase mb-1">{{ obService.name }}</h5>
+                    <div class="mb-3 line-clamp-1">{{ obService.preview_text }}</div>
+                </div>
+                <img class="absolute right-0 top-0 bottom-0 h-full" src="{{ obService.cover.path }}" alt="">
             </a>
             {% endfor %}
         </div>

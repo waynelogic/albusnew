@@ -1,4 +1,5 @@
-<section class="plans-section overflow-hidden relative isolate">
+{#
+<section class="plans-section section-box overflow-hidden relative isolate">
     <img class="absolute w-full h-full object-cover z-[-1]" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/background/body-bg-1.jpg" alt="">
     <div class="container py-16">
         <div class="grid lg:grid-cols-2 gap-10">
@@ -46,6 +47,52 @@
                         <a href="https://muffle.droitlab.com/contact/" class="mt-4 btn btn-default">Подробнее</a>
                     </div>
                 </div>
+            </div>
+        </div>
+    </div>
+</section>
+#}
+
+<section class="bg-[#1d2023]">
+    <div class="container py-12">
+        <div class="grid lg:grid-cols-2 gap-20">
+            <div>
+                <h2 class="text-4xl font-serif font-semibold text-white uppercase flex items-center mb-10">
+                    <span class="mr-2">Начни жизнь с чистого листа</span>
+                    <span>{% partial 'ui/icon' icon='caret-right-bold' s=3 %} </span>
+                </h2>
+                <img class="relative block w-full rounded-3xl shadow-[0_0_100px_0_#F8B326]" src="https://fabric-lab.co/wp-content/themes/vosio/html/images/resource/image-1.jpg" alt="">
+            </div>
+            <div>
+                <p class="block text-white mb-6">Альбус — компания, анализирующая потребности и бизнес-процессы организаций. Работаем с 2018 года, занимаемся автоматизацией бизнеса, управлением активами и инвестиций, финансовым аудитом и оказываем услуги лизинга и юридической практики..</p>
+                {% set arPoints = [
+                    {
+                        title: 'Качественный веб-сайт - позволит привлечь новых клиентов.',
+                        icon: 'browsers'
+                    },
+                    {
+                        title: 'Правильно настроенная система учета - обеспечит надежную финансовую базу.',
+                        icon: 'handshake'
+                    },
+                    {
+                        title: 'Эффективная работа менеджеров - профессионализм менеджеров сделает бизнес более успешным и устойчивым.',
+                        icon: 'user-circle'
+                    },
+                    {
+                        title: 'Эффективная работа менеджеров - профессионализм менеджеров сделает бизнес более успешным и устойчивым.',
+                        icon: 'user-circle'
+                    },
+                ] %}
+                <ul class="mt-4 space-y-8 text-white">
+                    {% for obItem in arPoints %}
+                    <li class="flex items-center">
+                        <span class="bg-primary text-white rounded-3xl flex items-center justify-center p-3">
+                            {% partial 'ui/icon' icon=obItem.icon s=6 %}
+                        </span>
+                        <span class="ml-8">{{ obItem.title }}</span>
+                    </li>
+                    {% endfor %}
+                </ul>
             </div>
         </div>
     </div>

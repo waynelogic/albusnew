@@ -1,7 +1,6 @@
 <?php namespace Albus\Corporate\Components;
 
-use Albus\Corporate\Classes\Component\SortingElementList;
-use Albus\Corporate\Classes\Toolbox\ElementCollection;
+use Cms\Classes\ComponentBase;
 use Albus\Corporate\Models\Department;
 
 
@@ -10,12 +9,8 @@ use Albus\Corporate\Models\Department;
  *
  * @link https://docs.octobercms.com/3.x/extend/cms-components.html
  */
-class DepartmentList extends SortingElementList
+class DepartmentList extends ComponentBase
 {
-    /** @var array */
-    protected $arPropertyList = [];
-
-    const ITEM_CLASS = Department::class;
 
     public function componentDetails()
     {
@@ -25,33 +20,11 @@ class DepartmentList extends SortingElementList
         ];
     }
 
-    /**
-     * @return array
-     */
-    public function defineProperties()
-    {
-        $this->arPropertyList = [
-            'sorting' => [
-                'title'   => 'lovata.shopaholic::lang.component.product_list_sorting',
-                'type'    => 'dropdown',
-                'options' => [
-                    'default'          => 'По умолчанию',
-                    'name asc'         => 'Имя А..Я',
-                    'name desc'        => 'Имя Я..А',
-                    'created_at asc'   => 'Дата создания',
-                    'created_at desc'  => 'Дата создания',
-                    'updated_at asc'   => 'Дата создания',
-                    'updated_at desc'  => 'Дата создания',
-                ],
-            ],
-        ];
+    public $arItems;
 
-        return $this->arPropertyList;
-    }
-
-    public function make($arElementIDList = null)
-    {
-        return ElementCollection::make($arElementIDList, static::ITEM_CLASS);
+    public function init() {
+        $arDepartments = Department::get();
+        $this->arItems = $arDepartments;
     }
 
     /**
@@ -62,5 +35,9 @@ class DepartmentList extends SortingElementList
     public function onAjaxRequest()
     {
         return true;
+    }
+
+    public function get() {
+        return $this->arItems;
     }
 }

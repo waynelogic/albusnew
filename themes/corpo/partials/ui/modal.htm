@@ -1,12 +1,16 @@
-<div class="modal fixed inset-0" id="{{ id }}">
+<div class="modal fixed inset-0 z-[9999]" id="{{ id }}">
     <div class="fixed bg-black/30 inset-0" data-close></div>
 
     <div class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 bg-white rounded-md shadow-md min-w-[600px]">
         <div class="modal-header flex items-center justify-between border-b text-2xl font-semibold p-3">
             <div data-modal-header="{{ id }}">
-                Модалка
+                {% placeholder header default %}
+                    Модалка
+                {% endplaceholder %}
             </div>
-            <button class="btn btn-default" data-close>x</button>
+            <button data-close>
+                ×
+            </button>
         </div>
         <div class="modal-content p-3" data-modal-content="{{ id }}">
             {{ body | raw }}

@@ -1,6 +1,6 @@
 {
   "src/css/app.css": {
-    "file": "assets/app-e1c30478.css",
+    "file": "assets/app-f3f35929.css",
     "isEntry": true,
     "src": "src/css/app.css"
   },
@@ -12,9 +12,10 @@
       "src/js/components/accordion.js",
       "src/js/components/tabs.js",
       "src/js/components/calc.js",
+      "src/js/components/location.js",
       "src/js/components/dropdown.js"
     ],
-    "file": "assets/main-c85a19f5.js",
+    "file": "assets/main-6a3e4379.js",
     "isEntry": true,
     "src": "src/js/app.js"
   },
@@ -24,7 +25,7 @@
     "src": "src/js/components/accordion.js"
   },
   "src/js/components/calc.js": {
-    "file": "assets/calc-e8119851.js",
+    "file": "assets/calc-d5f22963.js",
     "isDynamicEntry": true,
     "src": "src/js/components/calc.js"
   },
@@ -33,13 +34,18 @@
     "isDynamicEntry": true,
     "src": "src/js/components/dropdown.js"
   },
+  "src/js/components/location.js": {
+    "file": "assets/location-81136ad6.js",
+    "isDynamicEntry": true,
+    "src": "src/js/components/location.js"
+  },
   "src/js/components/modal.js": {
-    "file": "assets/modal-e3171d8b.js",
+    "file": "assets/modal-d56338a4.js",
     "isDynamicEntry": true,
     "src": "src/js/components/modal.js"
   },
   "src/js/components/modalAjax.js": {
-    "file": "assets/modalAjax-49f0ac30.js",
+    "file": "assets/modalAjax-264eef85.js",
     "imports": [
       "src/js/components/modal.js"
     ],
