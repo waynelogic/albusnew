@@ -55,7 +55,7 @@ trait Boot {
             ) {
                 return;
             }
-            if ($form->getModel()->category->properties_file_path) {
+            if (!empty($form->getModel()->category->properties_file_path)) {
                 $file_path = Theme::getActiveTheme()->getPath() . DIRECTORY_SEPARATOR . 'meta/services/' . $form->getModel()->category->properties_file_path;
                 $form->addTabFields([
                     'content' => [

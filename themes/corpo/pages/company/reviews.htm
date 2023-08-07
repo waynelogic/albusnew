@@ -2,3 +2,18 @@ title = "Отзывы"
 layout = "company"
 url = "/company/reviews"
 ==
+{% put breadcrumbs %}
+    {% partial 'common/breadcrumbs/items' arItems=[
+        {
+            title: 'Главная',
+            url: '/'
+        },
+        {
+            title: 'О компании',
+            url: 'company/index' | page
+        },
+        {
+            title: this.page.title
+        },
+    ] %}
+{% endput %}

@@ -39,7 +39,7 @@ code = "footer"
                 <ul class="space-y-8 mt-5 text-gray-400">
                     {% for obItem in arContacts %}
                     <li>
-                        <a href="{{ obItem.url }}" class="flex w-full items-center transition-all" title="Заказать звонок">
+                        <a href="{{ obItem.url }}" class="flex w-full items-center transition-all hover:text-primary" title="Заказать звонок">
                             {% partial 'ui/icon' icon=obItem.icon s=2 css='mr-4' %}
                             <span class="">{{ obItem.text }}</span>
                         </a>

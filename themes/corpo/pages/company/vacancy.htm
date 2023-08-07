@@ -2,6 +2,21 @@ url = "/company/vacancy"
 layout = "company"
 title = "Карьера"
 ==
+{% put breadcrumbs %}
+    {% partial 'common/breadcrumbs/items' arItems=[
+        {
+            title: 'Главная',
+            url: '/'
+        },
+        {
+            title: 'О компании',
+            url: 'company/index' | page
+        },
+        {
+            title: this.page.title
+        },
+    ] %}
+{% endput %}
 <div class="vacancy_desc">
     <div class="image">
         <img class="img-responsive" src="https://priority.aspro-demo.ru/upload/iblock/394/394df3fcf18b1d3237413d42b548b747.jpg" alt="О компании">

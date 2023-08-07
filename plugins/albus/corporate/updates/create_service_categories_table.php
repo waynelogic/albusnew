@@ -26,6 +26,7 @@ class CreateServiceCategoriesTable extends Migration
             $obTable->text('preview_text')->nullable();
             $obTable->text('description')->nullable();
             $obTable->string('properties_file_path')->nullable();
+            $obTable->string('icon_svg')->nullable();
             $obTable->integer('parent_id')->nullable()->unsigned();
             $obTable->integer('nest_left')->nullable()->unsigned();
             $obTable->integer('nest_right')->nullable()->unsigned();

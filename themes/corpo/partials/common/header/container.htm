@@ -99,23 +99,31 @@ code = "main-menu"
 
 #}
 
+{% set arContacts = [
+    {
+        text: this.theme.phone,
+        url: 'tel:' ~ this.theme.phone | replace({' ': '', '-': '', '(': '', ')': ''}),
+        icon: 'microphone'
+    },
+    {
+        text: this.theme.email,
+        url: 'mailto:' ~ this.theme.email,
+        icon: 'envelope-open'
+    }
+] %}
 
 
 <header class="site-header relative shadow-[0_0_16px_#00000014]  bg-white z-[999]">
     <div class="container flex justify-between text-[#969fa8] font-medium font-serif">
         <ul class="flex flex-wrap items-center py-1.5">
-            <li class="mr-5">
-                <a href="#" class="flex items-center hover:text-primary transition-all">
-                    {% partial 'ui/icon' s=1 icon='microphone' %}
-                    <div class="ml-4">+7 (989) 5-1234-44</div>
+            {% for obItem in arContacts %}
+            <li{{ not loop.last ? ' class="mr-5"' }}>
+                <a href="{{ obItem.url }}" class="flex items-center hover:text-primary transition-all">
+                    {% partial 'ui/icon' s=1 icon=obItem.icon %}
+                    <div class="ml-4">{{ obItem.text }}</div>
                 </a>
             </li>
-            <li>
-                <a href="#" class="flex items-center hover:text-primary transition-all">
-                    {% partial 'ui/icon' s=1 icon='envelope-open' %}
-                    <div class="ml-4">info@albus-it.ru</div>
-                </a>
-            </li>
+            {% endfor %}
         </ul>
         <ul class="hidden md:flex space-x-4">
             {% for item in obInfolineLinks %}

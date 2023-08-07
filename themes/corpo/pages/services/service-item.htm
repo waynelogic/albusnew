@@ -5,8 +5,29 @@ title = "Услуги - страница элемента"
 [ServicePage]
 slug = "{{ :slug }}"
 ==
-{% put hide_br_title = 'true' %}
 {% set obService = ServicePage.get() %}
+{% put hide_br_title = 'true' %}
+
+{% put breadcrumbs %}
+    {% partial 'common/breadcrumbs/items' arItems=[
+        {
+            title: 'Главная',
+            url: '/'
+        },
+        {
+            title: 'Услуги',
+            url: 'services/index' | page
+        },
+        {
+            title: obService.category.name,
+            url: obService.category.getPageUrl('services/category')
+        },
+        {
+            title: obService.name
+        },
+    ] %}
+{% endput %}
+
 {% set background = obService.background ?  obService.background.path : 'https://static.mts.ru/dpc_upload/contents/383/mm_family_desktop_2364_1104.jpg' %}
 
 

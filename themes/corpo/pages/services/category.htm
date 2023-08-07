@@ -8,7 +8,21 @@ slug = "{{ :category }}"
 [ServiceList]
 slug = "{{ :category }}"
 ==
-
+{% put breadcrumbs %}
+    {% partial 'common/breadcrumbs/items' arItems=[
+        {
+            title: 'Главная',
+            url: '/'
+        },
+        {
+            title: 'Услуги',
+            url: 'services/index' | page
+        },
+        {
+            title: this.page.title
+        },
+    ] %}
+{% endput %}
 <section class="services-list">
     <div class="container">
         <div class="grid lg:grid-cols-12 gap-10">
